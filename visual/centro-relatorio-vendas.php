@@ -20,36 +20,56 @@ else{
     
     $dblSomaTotalVenda = 0.00;
     $intContador = 0;
-
+    
+    $arr_tipopagamento_valor = array("tipopagamento"=>array(), "valor"=>array());
+    $arr_tipopagamento_valor['tipopagamento'][0] = "Dinheiro";
+    $arr_tipopagamento_valor['tipopagamento'][1] = "Pix";
+    $arr_tipopagamento_valor['tipopagamento'][2] = "Débito";
+    $arr_tipopagamento_valor['tipopagamento'][3] = "Crédito";
+    $arr_tipopagamento_valor['valor'][0] = 0;
+    $arr_tipopagamento_valor['valor'][1] = 0;
+    $arr_tipopagamento_valor['valor'][2] = 0;
+    $arr_tipopagamento_valor['valor'][3] = 0;
     while($intContador < 4){
-        if(empty($arrRelatorio[0]['total_valor'][$intContador])){
-                $arrRelatorio[0]['total_valor'][$intContador] = 0;
-        }else{
+        
+        if(!empty($arrRelatorio[0]['total_valor'][$intContador])){
+
+            $str_case = $arrRelatorio[0]['tipopagamento'][$intContador]; 
+
+            switch($str_case){
+                case "din":
+                    $arr_tipopagamento_valor['valor'][0] += $arrRelatorio[0]['total_valor'][$intContador];
+                    break;
+                case "pix":
+                    $arr_tipopagamento_valor['valor'][1] += $arrRelatorio[0]['total_valor'][$intContador];
+                    break;
+                case "deb":
+                    $arr_tipopagamento_valor['valor'][2] += $arrRelatorio[0]['total_valor'][$intContador];
+                    break;
+                case "cre":
+                    $arr_tipopagamento_valor['valor'][3] += $arrRelatorio[0]['total_valor'][$intContador];
+                    break;
+            }
             $dblSomaTotalVenda += $arrRelatorio[0]['total_valor'][$intContador];            
         }
-
         $intContador++;
     }
 }
 ?>
 
 <table>
+<?php
+    $intContador = 0;
+    while($intContador < 4){
+?>
     <tr>
-        <td>Total em dinheiro</td>
-        <td>R$: <?php print_r($arrRelatorio[0]['total_valor'][0]);?></td>
+        <td>Total em <?php print_r($arr_tipopagamento_valor["tipopagamento"][$intContador]);?></td>
+        <td>R$: <?php print_r($arr_tipopagamento_valor["valor"][$intContador]);?>.00</td>
     </tr>
-    <tr>
-        <td>Total em pix</td>
-        <td>R$: <?php print_r($arrRelatorio[0]['total_valor'][1]);?></td>
-    </tr>
-    <tr>
-        <td>Total em débito</td>
-        <td>R$: <?php print_r($arrRelatorio[0]['total_valor'][2]);?></td>
-    </tr>
-    <tr>
-        <td>Total em crédito</td>
-        <td>R$: <?php print_r($arrRelatorio[0]['total_valor'][3]);?></td>
-    </tr>
+<?php
+    $intContador++;
+    }
+?>
     <tr class="linha_total">
         <td>Total da venda</td>
         <td>R$: <?php print_r($dblSomaTotalVenda);?>.00</td>

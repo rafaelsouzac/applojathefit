@@ -7,9 +7,10 @@
                 <div class="submenu">
                     <span>Vendas</span>
                     <div class="submenu-content">
-                        <a href="vendas.php">Registrar</a>
-                        <a href="relatorio_vendas.php">Relatório Valor Dia</a>
-                        <a href="relatorio_detalhado_vendas.php">Relatório Por Venda</a>
+                        <a href="vendas.php">Registrar Vendas</a>
+                        <a href="trocas.php">Troca de Produtos</a>
+                        <a href="relatorio_vendas.php">Relatór. Valor Dia</a>
+                        <a href="relatorio_detalhado_vendas.php">Relat. Por Venda</a>
                     </div>
                 </div>
                 <a href="#">---------</a>
@@ -19,8 +20,8 @@
                         <a href="cadastro_produto.php">Produto</a>
                         <a href="cadastro_fornecedor.php">Fornecedor</a>
                         <a href="cadastro_fornecedor.php">Fornec.-Prod.</a>
-                        <a href="cadastro_fornecedor.php">Despesas Loja</a>
-                        <a href="cadastro_fornecedor.php">Despesas Func.</a>
+                        <a href="cadastro_despesas_loja.php">Despesas Loja</a>
+                        <a href="">Despesas Func.</a>
                     </div>
                 </div>
                 <a href="#">---------</a>

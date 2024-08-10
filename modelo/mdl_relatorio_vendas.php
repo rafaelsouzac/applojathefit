@@ -11,7 +11,8 @@ function buscaRelatorioDia(){
 
 	$dataHoje = date("Y-m-d");
 	$strSql = "SELECT dataregistro, MIN(idpedido) as inicio,
-    		   MAX(idpedido) as fim FROM pedidos WHERE aberto = 'F' AND dataregistro = '{$dataHoje}' GROUP BY dataregistro";
+    		   MAX(idpedido) as fim FROM pedidos 
+			   WHERE aberto = 'F' AND dataregistro = '{$dataHoje}' ";
 	
    $retExec = $execSql->query($strSql)->fetch_assoc();
 
@@ -19,7 +20,11 @@ function buscaRelatorioDia(){
 		return ;
 	}
 	else{
-		$strSql = "SELECT tipopagamento, SUM(valor) as total_valor FROM valorespedidos WHERE idpedido BETWEEN {$retExec['inicio']} AND {$retExec['fim']} GROUP BY tipopagamento order by field(tipopagamento , 'din', 'pix', 'deb', 'cre')";
+		$strSql = "SELECT tipopagamento, 
+		SUM(valor) as total_valor 
+		FROM valorespedidos WHERE idpedido 
+		BETWEEN {$retExec['inicio']} AND {$retExec['fim']} 
+		GROUP BY tipopagamento order by field(tipopagamento , 'din', 'pix', 'deb', 'cre')";
 		$retExec = $execSql->query($strSql);
 		$recLinha = 0;
 		$arrRetorno = array();
