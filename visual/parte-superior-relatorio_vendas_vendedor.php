@@ -14,8 +14,16 @@
     </div>
 </div>
 <div class="linha">
-    <form id="formulario" action="controle/con_relatorio_detalhado_vendas.php" method="post">
+    <form id="formulario" action="controle/con_relatorio_vendas_vendedor.php" method="post">
         <input type="hidden" name="action" value="1">
-        <!--<button id="botao-add" type="submit">Relatório Det.</button>-->
+        <label for="vendedores">Vendedor:</label>
+        <select id="vendedor" name="vendedor">
+            <option value=""></option>
+            <option value="rafaelsouzac@gmail.com">Rafael</option>
+            <option value="cinara@lojathefit.com.br">Cinara</option>
+            <option value="taila@lojathefit.com.br">Taila</option>
+            <option value="natiele@lojathefit.com.br">Natiele</option>
+        </select>        
+        <button id="botao-add" type="submit">Relatório Det.</button>
     </form>
 </div>

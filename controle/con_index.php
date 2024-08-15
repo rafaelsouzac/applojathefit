@@ -18,6 +18,7 @@ if(isset($_POST['usuario']) || isset($_POST['senha']))
             'quantidade' => array(), 'valor' => array(), 
             'codigobarra'=> array() );
         $_SESSION['vendas']['usuario'] = $strUsuario;
+        $_SESSION['vendas']['relatoriousuario'] = "";
         $_SESSION['vendas']['aberta'] = 'n';
         $_SESSION['vendas']['frase'] = '0';
         $_SESSION['vendas']['nivelacesso'] = $retTemUsuario['nivelacesso'];

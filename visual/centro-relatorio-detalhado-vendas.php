@@ -1,10 +1,13 @@
+<?php
+
+?>
 <div class="rel_det">
     <div>
         <table>
                 <tbody>
                     <tr>
                         <td class="td-totalcompra">
-                            Descrição Venda - Cinara
+                            Vendedor - <?php echo("$vendedor"); ?>
                         </td>
                     </tr>
                 </tbody>

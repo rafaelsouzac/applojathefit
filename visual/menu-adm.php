@@ -8,7 +8,7 @@
                     <span>Vendas</span>
                     <div class="submenu-content">
                         <a href="vendas.php">Registrar Vendas</a>
-                        <a href="trocas.php">Troca de Produtos</a>
+                        <!--<a href="trocas.php">Troca de Produtos</a>-->
                         <a href="relatorio_vendas.php">Relatór. Valor Dia</a>
                         <a href="relatorio_vendas_vendedor.php">Rel. Por Vendedor</a>
                         <a href="relatorio_detalhado_vendas.php">Relat. Por Venda</a>

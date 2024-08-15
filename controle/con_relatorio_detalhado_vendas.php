@@ -8,19 +8,18 @@ $dir .="modelo\\mdl_relatorio_vendas.php";
 include("{$dir}");
 
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+function Relatorio_detalhado_vendas(){
+	
+	$arr_retorno = array("tabela_pedidos"=>array(), "produto_pedido_quantidade"=>array(), "tabela_valores_pedidos"=>array());
+	$arr_retorno['tabela_pedidos'] = Tabela_Pedidos();
+	$int_fim_loop = count($arr_retorno['tabela_pedidos']['idpedidos']);
+	$int_inicio_loop = 0;
 
-	$intAcao = $_POST['action'];
-
-	switch ($intAcao) {
-		case 1:
-			$arrInfo = buscaRelatorioDia();
-			$strUrl = "relatorio_detalhado_vendas.php?info=".urlencode(serialize($arrInfo));
-			header("Location: ../{$arrInfo}");
-			break;
-
-		default:
-			header("Location: ../erros?indice=5");
-			break;
+	while($int_inicio_loop < $int_fim_loop){
+		$arr_retorno['produtos_pedidos_quantidade'][] = Produtos_Pedido_Quantidade($arr_retorno['tabela_pedidos']['idpedidos'][$int_inicio_loop]);
+		$arr_retorno['tabela_valores_pedidos'][] = Tabela_Valores_Pedidos($arr_retorno['tabela_pedidos']['idpedidos'][$int_inicio_loop]);
+		$int_inicio_loop++;
 	}
+
+	return $arr_retorno;
 }
