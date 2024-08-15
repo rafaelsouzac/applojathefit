@@ -1,13 +1,25 @@
 <div class="central">
         <?php
-            
-            $strCaminho = __DIR__;
+            $so = php_uname('s');
+            $so = strtolower($so);
+            if($so == 'linux'){
+                $barra = "/";
+            }else{
+                $barra = "\\";
+            }
+            $dir = dirname(__FILE__);
+            $dir = substr($dir, 0,-8);
+            $dirinclude = $dir;
+            $dirinclude .="controle".$barra."con_relatorio_vendas.php"; 
+            include("{$dirinclude}");
+        
+            /*$strCaminho = __DIR__;
             $intTamanho = strlen($strCaminho);
             $subString = $intTamanho - 6;
             $strCaminho = substr($strCaminho, 0, $subString);
             $strCaminho = str_replace("'\'","'\\'",$strCaminho);
             $strCaminho = $strCaminho."\\controle\\con_contagem-estoque.php";
-            require_once ($strCaminho);
+            require_once ($strCaminho);*/
 
             $arrContagem = RelatorioContagem();
             $intContIndice = 0;

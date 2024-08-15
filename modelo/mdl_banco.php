@@ -6,7 +6,6 @@ function acesso()
     if($_SERVER['SERVER_ADDR'] == '127.0.0.1' || 
        $_SERVER['SERVER_NAME'] == 'localhost')
     {
-        $_SESSION['entrei'] = 'if';
         $servidor = "localhost";
         $usuario = "root";
         $senha = "";
@@ -16,15 +15,15 @@ function acesso()
     else
     {
         $servidor = "localhost";
-        $usuario = "u199510621_lojathefit";
+        $usuario = "u346918566_dbarafael";
         $senha = "Agileire#9183";
-        $basedados = "u199510621_lojathefit";    
-        $charset = "utf8mb3";
+        $basedados = "u346918566_lojathefit";    
+        $charset = "utf8mb4";
     }
         
 
     $conecxao = new mysqli($servidor, $usuario, $senha, $basedados);
-    
+
     $conecxao->set_charset($charset);
 
     return $conecxao;

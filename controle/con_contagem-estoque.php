@@ -1,12 +1,30 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 
+$so = php_uname('s');
+$so = strtolower($so);
+if($so == 'linux'){
+    $barra = "/";
+}else{
+    $barra = "\\";
+}
+$dir = dirname(__FILE__);
+$dir = substr($dir, 0,-8);
+
+$dirinclude = $dir;
+$dirinclude .="controle".$barra."con_relatorio_vendas.php"; 
+
 $strCaminho = __DIR__;
 $intTamanho = strlen($strCaminho);
 $subString = $intTamanho - 8;
 $strCaminho = substr($strCaminho, 0, $subString);
-$strCaminho = str_replace("'\'","'\\'",$strCaminho);
-$strCaminho = $strCaminho."\\modelo\\mdl_contagem-estoque.php";
+if($so == 'linux'){
+    $strCaminho = str_replace("'\'","'/'",$strCaminho);
+    $strCaminho = $strCaminho."/modelo/mdl_contagem-estoque.php";
+}else{
+    $strCaminho = $strCaminho."\\modelo\\mdl_contagem-estoque.php";
+}
+
 require_once($strCaminho);
 
 /*
@@ -23,8 +41,7 @@ require_once($strCaminho);
 
 /*pega valor do código*/
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-
+    
     if(isset($_POST['funcaocarrinho'])){
         
         $intFuncao = $_POST['funcaocarrinho'];

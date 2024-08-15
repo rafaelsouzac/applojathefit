@@ -1,13 +1,17 @@
 <?php
+// Ativa a exibição de erros
+ini_set('display_errors', 1);
+
+// Define o nível de relatório de erros
+error_reporting(E_ALL);
+
 
 require_once('../modelo/mdl_index.php');
 
 if(isset($_POST['usuario']) || isset($_POST['senha']))
 {
-    
     $strUsuario = $_POST['usuario'];
     $strSenha = $_POST['senha'];
-
     $retTemUsuario = TemUsuario($strUsuario, $strSenha);
 
     if($retTemUsuario['tem'] == '1')

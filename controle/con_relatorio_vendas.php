@@ -1,11 +1,22 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
 
-$dir = dirname(__FILE__);
-$dir = substr($dir, 0,-8);
-$dir .="modelo\\mdl_relatorio_vendas.php"; 
+$so = php_uname('s');
+$so = strtolower($so);
 
-include("{$dir}");
+$dir = dirname(__FILE__);
+
+$dir = substr($dir, 0,-8);
+
+if($so == 'linux'){
+    $barra = "/";
+}else{
+    $barra = "\\";
+}
+
+$dirinclude = $dir;
+$dirinclude .="modelo".$barra."mdl_relatorio_vendas.php"; 
+include("{$dirinclude}");
 
 
 function relatorioDia(){

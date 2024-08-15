@@ -5,12 +5,22 @@ if(session_status() !== PHP_SESSION_ACTIVE){
     header("Location: erros.php?indice=4");
 }
 else{
-    $dir = dirname(__FILE__);
-    $dir = substr($dir, 0,-6);
-    $dir .="controle\\con_relatorio_vendas_vendedor.php"; 
+    $so = php_uname('s');
+    $so = strtolower($so);
     
-
-    include("{$dir}");
+    $dir = dirname(__FILE__);
+    
+    $dir = substr($dir, 0,-8);
+    
+    if($so == 'linux'){
+        $barra = "/";
+    }else{
+        $barra = "\\";
+    }
+    
+    $dirinclude = $dir;
+    $dirinclude .="controle".$barra."con_relatorio_vendas_vendedor.php"; 
+    include("{$dirinclude}");
 
     if(isset($_GET['pg'])){
         $str_usuario = $_GET['pg'];

@@ -5,12 +5,20 @@ if(session_status() !== PHP_SESSION_ACTIVE){
     header("Location: erros.php?indice=4");
 }
 else{
+    $so = php_uname('s');
+    $so = strtolower($so);
+    if($so == 'linux'){
+        $barra = "/";
+    }else{
+        $barra = "\\";
+    }
     $dir = dirname(__FILE__);
-    $dir = substr($dir, 0,-6);
-    $dir .="controle\\con_relatorio_vendas.php"; 
+    $dir = substr($dir, 0,-8);
     
+    $dirinclude = $dir;
+    $dirinclude .="controle".$barra."con_relatorio_vendas.php"; 
 
-    include("{$dir}");
+    include("{$dirinclude}");
 
     if(isset($_GET['pg'])){
         //

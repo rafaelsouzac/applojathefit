@@ -1,7 +1,22 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 
-require_once '../modelo/mdl_vendas.php';
+$so = php_uname('s');
+$so = strtolower($so);
+
+$dir = dirname(__FILE__);
+
+$dir = substr($dir, 0,-8);
+
+if($so == 'linux'){
+    $barra = "/";
+}else{
+    $barra = "\\";
+}
+
+$dirinclude = $dir;
+$dirinclude .="modelo".$barra."mdl_vendas.php"; 
+include("{$dirinclude}");
 
 /*
     funcaocarrinho = 1 => adiciona produto que esta sendo comprado
