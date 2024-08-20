@@ -188,6 +188,17 @@ header {
 .coluna-apg {
     margin-left: 16px;
 }
+.linhaform{
+    text-align: right;
+}
+.coluna-quant{
+    /* background-color: brown; */
+    margin: 5px;
+    display: inline-block;
+}
+#campo-texto-quantidade {
+    width: 80px;
+}
 /***************************** FIM PARTE CENTRO SCROLL ************************/
 /***************************** PARTE INFERIOR SCROLL **************************/
 .fechamento {

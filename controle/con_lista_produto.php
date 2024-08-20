@@ -20,6 +20,7 @@ include("{$dirinclude}");
 
 
 function listaProdutos($intCodigoBarra = NULL){
+    echo("entrei na lista de produtos");
     if(!is_null($intCodigoBarra)){
         return listaDeProdutosAtivos($intCodigoBarra);
     }else{

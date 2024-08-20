@@ -16,6 +16,7 @@
 
 	$dirinclude = $dir;
 	$dirinclude .="controle".$barra."con_lista_produto.php"; 
+	
 	include("{$dirinclude}");
 
 	if(isset($_GET['cp'])){

@@ -20,8 +20,8 @@
                     <div class="submenu-content">
                         <a href="cadastro_produto.php">Produto</a>
                         <a href="cadastro_fornecedor.php">Fornecedor</a>
-                        <a href="cadastro_fornecedor.php">Fornec.-Prod.</a>
-                        <a href="cadastro_despesas.php">Despesas</a>
+                       <!-- <a href="cadastro_fornecedor.php">Fornec.-Prod.</a> -->
+                        <!-- <a href="cadastro_despesas.php">Despesas</a> -->
                     </div>
                 </div>
                 <a href="#">---------</a>

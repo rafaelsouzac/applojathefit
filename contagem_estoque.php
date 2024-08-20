@@ -11,13 +11,14 @@ if(session_status() !== PHP_SESSION_ACTIVE)
     
     session_start();
     $_SESSION['infolocais']['endereco'] = $_SERVER['SERVER_NAME'];
-
+    
     $diretorio = $_SERVER['PHP_SELF'];
     $ncarcter = strrpos($diretorio, "/");
     $diretorio = substr($diretorio, 0, $ncarcter+1);
     $_SESSION['infolocais']['dir'] = $diretorio;
+    $str_contagem_aberta = $_SESSION['contagem']['aberta'];
     
-    if ($_SESSION['contagem']['aberta'] == 'n') {
+    if ( $str_contagem_aberta == 'n') {
         $strCorpo = './visual/corpo-sem-contagem-estoque.php';
     }
     else{

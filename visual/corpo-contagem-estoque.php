@@ -8,18 +8,11 @@
                 $barra = "\\";
             }
             $dir = dirname(__FILE__);
-            $dir = substr($dir, 0,-8);
+            $dir = substr($dir, 0,-6);
             $dirinclude = $dir;
-            $dirinclude .="controle".$barra."con_relatorio_vendas.php"; 
+            $dirinclude .="controle".$barra."con_contagem-estoque.php"; 
             include("{$dirinclude}");
         
-            /*$strCaminho = __DIR__;
-            $intTamanho = strlen($strCaminho);
-            $subString = $intTamanho - 6;
-            $strCaminho = substr($strCaminho, 0, $subString);
-            $strCaminho = str_replace("'\'","'\\'",$strCaminho);
-            $strCaminho = $strCaminho."\\controle\\con_contagem-estoque.php";
-            require_once ($strCaminho);*/
 
             $arrContagem = RelatorioContagem();
             $intContIndice = 0;
@@ -32,14 +25,19 @@
             <div class="conteudo-venda">
                 <div class="linha">
                     <div class="coluna-img">
-                        <img class="image" src="incluir/mult/img/<?php echo("".$arrContagem['produto'][$intContIndice].""); ?>" 
-                             width="40" height="60" alt="<?php echo("".$arrContagem['produto'][$intContIndice]."");?>">
+                        <?php echo("".$arrContagem['produto'][$intContIndice]."");?>
                     </div>
                     <div class="coluna-desc">
-                        <div class="linha">
+                        <div class="linhaform">
                             <div class="coluna-quant">
                                 <form action="controle/con_vendas.php" method="post" name="selecaopagamento" enctype="application/x-www-form-urlencoded">                            
+                                <button id="botao-add" type="submit">Apagar</button>
+                            </div>
+                            <div class="coluna-quant">
                                 <input id="campo-texto-quantidade" name="quantidade" type="text" placeholder="" value="<?php  echo("".$arrContagem['quantidade'][$intContIndice]."")?>">
+                            </div>
+                            <div class="coluna-quant">
+                            <button id="botao-add" type="submit">Atualizar</button>
                             </div>
                         </div>
                     </div>                    

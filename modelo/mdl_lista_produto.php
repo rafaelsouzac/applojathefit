@@ -16,16 +16,14 @@ function ExecutaSql($strQuerySql = ""){
 }
 
 function listaDeProdutosAtivos($intCodigoBarras = NULL){
-
 	if(is_null($intCodigoBarras)){
 		$strSql = "SELECT * FROM listadeprodutos";
 	}else{
 		$strSql = "SELECT * FROM listadeprodutos where codigobarras = $intCodigoBarras";
 	}
-	
-	
+	echo($strSql);
 	$retExecSql = ExecutaSql($strSql);
-
+	print_r($retExecSql->fetch_array());
 	return $retExecSql;
 }
 
