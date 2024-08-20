@@ -1,5 +1,10 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
+// Ativa a exibição de erros
+ini_set('display_errors', 1);
+
+// Define o nível de relatório de erros
+error_reporting(E_ALL);
 
 if(session_status() !== PHP_SESSION_ACTIVE)
 {

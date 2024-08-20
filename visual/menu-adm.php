@@ -11,7 +11,7 @@
                         <!--<a href="trocas.php">Troca de Produtos</a>-->
                         <a href="relatorio_vendas.php">Relatór. Valor Dia</a>
                         <a href="relatorio_vendas_vendedor.php">Rel. Por Vendedor</a>
-                        <a href="relatorio_detalhado_vendas.php">Relat. Por Venda</a>
+                        <a href="relatorio_detalhado_vendas.php">Relatatorio Por Venda</a>
                     </div>
                 </div>
                 <a href="#">---------</a>
@@ -21,8 +21,7 @@
                         <a href="cadastro_produto.php">Produto</a>
                         <a href="cadastro_fornecedor.php">Fornecedor</a>
                         <a href="cadastro_fornecedor.php">Fornec.-Prod.</a>
-                        <a href="cadastro_despesas_loja.php">Despesas Loja</a>
-                        <a href="">Despesas Func.</a>
+                        <a href="cadastro_despesas.php">Despesas</a>
                     </div>
                 </div>
                 <a href="#">---------</a>

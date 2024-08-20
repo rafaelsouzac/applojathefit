@@ -10,7 +10,7 @@ else{
     
     $dir = dirname(__FILE__);
     
-    $dir = substr($dir, 0,-8);
+    $dir = substr($dir, 0,-6);
     
     if($so == 'linux'){
         $barra = "/";

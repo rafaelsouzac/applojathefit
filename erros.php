@@ -1,5 +1,12 @@
 <?php 
     header("Content-type: text/html; charset=utf-8");
+
+    // Ativa a exibição de erros
+    ini_set('display_errors', 1);
+
+    // Define o nível de relatório de erros
+    error_reporting(E_ALL);
+
     if(isset($_GET['indice']))
     {
         $intIndice = $_GET['indice'];
@@ -22,6 +29,9 @@
             case 5:
                 $strErro = "Erro no preenchimento do formulário.";
                 break;
+            case 6:
+                $strErro = "Não foi possivel deletar a venda.";
+                break;    
             default:
                 break;
         }

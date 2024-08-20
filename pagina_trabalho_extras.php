@@ -1,0 +1,13 @@
+Array ( [tabela_pedidos] => Array ( [idpedido] => Array ( [0] => 58 [1] => 60 ) 
+                                                         [usuario] => Array ( [0] => rafaelsouzac@gmail.com [1] => taila@lojathefit.com.br ) ) 
+            [tabela_valores_pedidos] => Array ( [0] => Array ( [tipopagamento] => Array ( [0] => din ) 
+                                                                                             [valor] => Array ( [0] => 180.00 ) ) 
+                                                                      [1] => Array ( [tipopagamento] => Array ( [0] => pix ) 
+                                                                                             [valor] => Array ( [0] => 540.00 ) ) ) 
+            [produtos_pedidos_quantidade] => Array ( [0] => Array ( [titulo] => Array ( [0] => Casaco Teddy Feminino Curto Cor Branco ) 
+                                                                                                         [quantidade] => Array ( [0] => 3 ) 
+                                                                                                         [valorproduto] => Array ( [0] => 60.00 ) ) 
+                                                                                  [1] => Array ( [titulo] => Array ( [0] => Casaco Teddy Feminino Curto Cor Preto 
+                                                                                                                                      [1] => Casaco Teddy Feminino Curto Cor Branco ) 
+                                                                                                        [quantidade] => Array ( [0] => 4 [1] => 5 ) 
+                                                                                                        [valorproduto] => Array ( [0] => 60.00 [1] => 60.00 ) ) ) ) 

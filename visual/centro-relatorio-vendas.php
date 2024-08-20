@@ -13,10 +13,11 @@ else{
         $barra = "\\";
     }
     $dir = dirname(__FILE__);
-    $dir = substr($dir, 0,-8);
-    
+
+    $dir = substr($dir, 0,-6);
+
     $dirinclude = $dir;
-    $dirinclude .="controle".$barra."con_relatorio_vendas.php"; 
+    $dirinclude .= $barra."controle".$barra."con_relatorio_vendas.php"; 
 
     include("{$dirinclude}");
 

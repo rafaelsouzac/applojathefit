@@ -1,11 +1,31 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
 
+// Ativa a exibição de erros
+ini_set('display_errors', 1);
+
+// Define o nível de relatório de erros
+error_reporting(E_ALL);
+
 session_start();
 
 if(session_status() !== PHP_SESSION_ACTIVE)
 {
     header("Location: erros.php?indice=4");
+}else{
+        $so = php_uname('s');
+        $so = strtolower($so);
+
+        if($so == 'linux'){
+            $barra = "/";
+        }else{
+            $barra = "\\";
+        }
+        $dirinclude = "";
+        $dirinclude .= ".".$barra."controle".$barra."con_relatorio_detalhado_vendas.php"; 
+        include($dirinclude);
+        
+        $ret_relatorio_datalhado = Relatorio_detalhado_vendas();
 }
 
 ?>
@@ -28,5 +48,6 @@ if(session_status() !== PHP_SESSION_ACTIVE)
             <?php require_once './visual/centro-relatorio-detalhado-vendas.php'; ?>
         
         <!-- PARTE FIXA FECHAMENTO PEDIDO -->
+        <?php require_once './visual/parte-inferior-relatorio-detalhado-vendas.php'; ?>
     </body>
 </html>

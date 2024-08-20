@@ -106,12 +106,12 @@ header {
 .linhaprincipal{
     width: 100%;
     display: block;
-    margin-left: 2px;
-    overflow-y: auto;
+    margin-left: 10px;
 }
 .linhaform{
     display: inline-block;
     margin-top: 10px;
+    overflow-y: auto;
 }
 #titulo{
     margin-left: 28px;
@@ -159,6 +159,10 @@ header {
 .codigobarra{
     background-color: lightgoldenrodyellow;
     color: black;
+}
+
+.footer{
+    height: 40px;
 }
 /***************************** FIM PARTE CENTRO SCROLL ************************/
 /***************************** PARTE INFERIOR SCROLL **************************/

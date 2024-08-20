@@ -15,7 +15,7 @@
 </div>
 <div class="linha">
     <form id="formulario" action="controle/con_vendas.php" method="post">
-        <input type="text" id="campo-texto" name="codigobarra" placeholder="Código do produto">
+        <input type="text" id="codigobarra" name="codigobarra" placeholder="Código do produto">
         <input type="hidden" name="funcaocarrinho" value="1">
         <button id="botao-add" type="submit">Add Venda</button>
     </form>

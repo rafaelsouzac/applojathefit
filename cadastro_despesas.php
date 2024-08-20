@@ -1,9 +1,13 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
 
+// Ativa a exibição de erros
+ini_set('display_errors', 1);
+
+// Define o nível de relatório de erros
+error_reporting(E_ALL);
+
 session_start();
-
-
 
 if(session_status() !== PHP_SESSION_ACTIVE)
 {
@@ -21,14 +25,14 @@ if(session_status() !== PHP_SESSION_ACTIVE)
     </head>
     <body>
         <!-- PARTE SUPERIOR -->
-            <?php require_once './visual/parte-superior-cadastro_despesas_loja.php'; ?>
+            <?php require_once './visual/parte-superior-cadastro_despesas.php'; ?>
             <hr>
 
         <!-- SCROLL DOS PRODUTOS DAS VENDAS -->
         
-            <?php require_once './visual/centro-cadastro_despesas_loja.php'; ?>
+            <?php require_once './visual/centro-cadastro_despesas.php'; ?>
         
         <!-- PARTE FIXA FECHAMENTO PEDIDO -->
-            <?php require_once './visual/parte-inferior-despesas_loja.php'; ?>
+            <?php require_once './visual/parte-inferior-despesas.php'; ?>
     </body>
 </html>
