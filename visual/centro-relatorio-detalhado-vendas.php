@@ -55,11 +55,23 @@
                                 <?php print_r($ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['quantidade'][$int_controle]);?>
                             </td>
                             <td style="width:30%;">
-                            <?php print_r($ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle]);?>
+                            <?php
+                                if($str_tipo_pagamento == 'cre'){
+                                    print_r($ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle]+5);
+                                } else{
+                                    print_r($ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle]);
+                                }
+                                
+                            ?>
                             </td>
                         </tr>
                         <?php
-                            $dbl_valor_compra += $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['quantidade'][$int_controle] *  $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle];
+                            if($str_tipo_pagamento == 'cre'){
+                                $int_acrecimo =  $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['quantidade'][$int_controle] * 5;
+                                $dbl_valor_compra += $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['quantidade'][$int_controle] *  $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle] + $int_acrecimo;
+                            }else{
+                                $dbl_valor_compra += $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['quantidade'][$int_controle] *  $ret_relatorio_datalhado['produtos_pedidos_quantidade'][$int_cont_pedidos]['valorproduto'][$int_controle];
+                            }
                             $int_controle++;
                             }
                         ?>
@@ -112,6 +124,12 @@
                         <tr>
                             <td class="apagar">
                                 <a href="controle/con_relatorio_detalhado_vendas.php?ped=<?php echo("{$ret_relatorio_datalhado['tabela_pedidos']['idpedido'][$int_cont_pedidos]}"); ?>">Apagar</a>
+                            </td>
+                            <td>
+                            <?php
+                                //buscar info se há cadastro do whats para envio ou se tem que cadastrar usuario.
+                            ?>
+                            <a href="cadastro_whats_vendas.php?ped=<?php echo("{$ret_relatorio_datalhado['tabela_pedidos']['idpedido'][$int_cont_pedidos]}"); ?>&pag=1">Enviar Recibo Por Whats</a>
                             </td>
                         </tr>
                     </tbody>
