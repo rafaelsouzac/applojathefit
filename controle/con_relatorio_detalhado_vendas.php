@@ -21,18 +21,23 @@ include("{$dirinclude}");
 
 function Relatorio_detalhado_vendas(){
 	
+
 	$arr_retorno = array("tabela_pedidos"=>array(),  "tabela_valores_pedidos"=>array());
 	$arr_retorno['tabela_pedidos'] = Tabela_Pedidos();
-	$int_fim_loop = count($arr_retorno['tabela_pedidos']['idpedido']);
-	$int_inicio_loop = 0;
+	if($arr_retorno['tabela_pedidos'] == 0){
+		return 0;
+	}else{
+		$int_fim_loop = count($arr_retorno['tabela_pedidos']['idpedido']);
+		$int_inicio_loop = 0;
 
-	while($int_inicio_loop < $int_fim_loop){
-		$arr_retorno['produtos_pedidos_quantidade'][] = Produtos_Pedido_Quantidade($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
-		$arr_retorno['tabela_valores_pedidos'][] = Tabela_Valores_Pedidos($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
-		$int_inicio_loop++;
+		while($int_inicio_loop < $int_fim_loop){
+			$arr_retorno['produtos_pedidos_quantidade'][] = Produtos_Pedido_Quantidade($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
+			$arr_retorno['tabela_valores_pedidos'][] = Tabela_Valores_Pedidos($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
+			$int_inicio_loop++;
+		}
+
+		return $arr_retorno;
 	}
-
-	return $arr_retorno;
 }
 
 function Apaga_Pedido($int_id_pedio = 0){

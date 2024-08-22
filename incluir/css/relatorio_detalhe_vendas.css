@@ -148,3 +148,14 @@ td{
     width: 50px;
     margin-top: 50px;
 }
+
+.registro{
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding: 5px;
+}

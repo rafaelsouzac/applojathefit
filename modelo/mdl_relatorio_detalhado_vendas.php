@@ -6,6 +6,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 require_once "mdl_banco.php";
 
+
 function Tabela_Pedidos(){
 
 	$execSql = acesso();
@@ -17,12 +18,16 @@ function Tabela_Pedidos(){
 
   	$retExec = $execSql->query($strSql);
 
-	while($linha = $retExec->fetch_assoc()){
-		$arrRetorno['idpedido'][] = $linha['idpedido'];
-		$arrRetorno['usuario'][] = $linha['usuario'];
+	if($retExec->num_rows == 0){
+		return 0;
+	}else{
+		while($linha = $retExec->fetch_assoc()){
+			$arrRetorno['idpedido'][] = $linha['idpedido'];
+			$arrRetorno['usuario'][] = $linha['usuario'];
+		}
+	
+		return $arrRetorno;	
 	}
-
-	return $arrRetorno;
 }
 
 function Produtos_Pedido_Quantidade($int_id_pedido = 0){
@@ -67,7 +72,7 @@ function Tabela_Valores_Pedidos($int_id_pedido = 0){
 function Apagar_Pedido($int_id_pedido = 0){
 	
 	$execSql = acesso();
-	
+
 	$str_sql = "Update pedidos set aberto = 'A' where idpedido = {$int_id_pedido} ";
 
 	$execSql->query($str_sql);
