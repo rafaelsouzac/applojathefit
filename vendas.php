@@ -36,6 +36,9 @@ if(session_status() !== PHP_SESSION_ACTIVE)
             case 2:
                 echo("  alert('Código do produto inválido.'\n);");
                 break;                
+            case 3:
+                echo("  alert('Whats Cadastrado.'\n);");
+                break;                    
             default:
                 // code...
                 break;
@@ -48,8 +51,10 @@ if(session_status() !== PHP_SESSION_ACTIVE)
 }
 else
 {
-    echo("entrei no else");
     header("Location: erros.php?indice=4");
+}
+if(isset($_GET['s'])){
+    $strCorpo = './visual/finaliza-pedido-whats.php';
 }
 ?>
 

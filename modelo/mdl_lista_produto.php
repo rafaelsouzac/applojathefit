@@ -21,9 +21,7 @@ function listaDeProdutosAtivos($intCodigoBarras = NULL){
 	}else{
 		$strSql = "SELECT * FROM listadeprodutos where codigobarras = $intCodigoBarras";
 	}
-	echo($strSql);
 	$retExecSql = ExecutaSql($strSql);
-	print_r($retExecSql->fetch_array());
 	return $retExecSql;
 }
 

@@ -1,6 +1,8 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 
+session_start();
+
 $so = php_uname('s');
 $so = strtolower($so);
 
@@ -108,8 +110,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         }
                     }
                 }
-
-                finalizarvenda($arrTipoPagamento);                
+                $int_id_pedido = $_SESSION['vendas']['idpedido'];
+                finalizarvenda($arrTipoPagamento);
+                header("Location: ../cadastro_whats_vendas.php?p=$int_id_pedido");           
                 break;            
             /****************************************************/
 

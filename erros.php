@@ -24,7 +24,7 @@
                 $strErro = "Código do Produto Inexistente.";
                 break;
             case 4:
-                $strErro = "Solicitação Invalida.";
+                $strErro = "Solicitação inválida.";
                 break;
             case 5:
                 $strErro = "Erro no preenchimento do formulário.";
@@ -32,13 +32,16 @@
             case 6:
                 $strErro = "Não foi possivel deletar a venda.";
                 break;    
+            case 7:
+                $strErro = "Tentativa de Cadastro inválida.";
+                break;        
             default:
                 break;
         }
     }
     else
     {
-        $strErro = "Acesso Invalido.";
+        $strErro = "Acesso inválido.";
     }
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

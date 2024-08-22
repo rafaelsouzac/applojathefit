@@ -33,5 +33,6 @@ if(session_status() !== PHP_SESSION_ACTIVE)
             <?php require_once './visual/centro-lista_produto.php'; ?>
         
         <!-- PARTE FIXA FECHAMENTO PEDIDO -->
+            <?php require_once './visual/parte-inferior-lista-produtos.php'; ?>
     </body>
 </html>

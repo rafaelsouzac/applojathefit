@@ -69,7 +69,7 @@ function finalizarVenda($arrTipoPagamento){
     //Apaga informações do carrino
     apagaInfoCarrinho();
 
-    header("Location: ../vendas.php");
+    return;
 }
 
 function codigoValido($intcodigo){
@@ -109,8 +109,7 @@ function apagaSessionPedido($intIndiceArray = 0){
         unset($_SESSION['vendas']['nomeimagem']);
         unset($_SESSION['vendas']['descricao']);
         unset($_SESSION['vendas']['idpedido']); 
-        print_r($_SESSION['vendas']);
-        exit();     
+        print_r($_SESSION['vendas']);     
     }else{
         unset($_SESSION['vendas']['produto'][$intIndiceArray]);
         unset($_SESSION['vendas']['quantidade'][$intIndiceArray]);
