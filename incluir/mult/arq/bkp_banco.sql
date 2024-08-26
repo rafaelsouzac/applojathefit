@@ -1,12 +1,5 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP TABLE IF EXISTS `acesso`;
 CREATE TABLE IF NOT EXISTS `acesso` (
   `idacesso` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) DEFAULT NULL,
@@ -19,13 +12,14 @@ INSERT INTO `acesso` (`idacesso`, `usuario`, `senha`, `nivelacesso`) VALUES
 	(4, 'rafaelsouzac@gmail.com', '123456', '5'),
 	(5, 'taila@lojathefit.com.br', '123456', '1');
 
+DROP TABLE IF EXISTS `acessoregistro`;
 CREATE TABLE IF NOT EXISTS `acessoregistro` (
   `idcessoregistroa` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `dataregistro` date NOT NULL,
   `acessohora` time NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`idcessoregistroa`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `acessoregistro` (`idcessoregistroa`, `usuario`, `dataregistro`, `acessohora`) VALUES
 	(9, 'rafaelsouzac@gmail.com', '2023-12-04', '12:34:06'),
@@ -98,26 +92,110 @@ INSERT INTO `acessoregistro` (`idcessoregistroa`, `usuario`, `dataregistro`, `ac
 	(76, 'taila@lojathefit.com.br', '2024-08-14', '07:57:54'),
 	(77, 'rafaelsouzac@gmail.com', '2024-08-14', '08:01:06'),
 	(78, 'taila@lojathefit.com.br', '2024-08-14', '08:44:15'),
-	(79, 'rafaelsouzac@gmail.com', '2024-08-14', '08:50:10');
+	(79, 'rafaelsouzac@gmail.com', '2024-08-14', '08:50:10'),
+	(80, 'rafaelsouzac@gmail.com', '2024-08-15', '13:39:06'),
+	(81, 'rafaelsouzac@gmail.com', '2024-08-15', '15:12:56'),
+	(82, 'rafaelsouzac@gmail.com', '2024-08-15', '20:07:26'),
+	(83, 'rafaelsouzac@gmail.com', '2024-08-16', '11:42:02'),
+	(84, 'taila@lojathefit.com.br', '2024-08-16', '11:45:15'),
+	(85, 'rafaelsouzac@gmail.com', '2024-08-16', '11:45:40'),
+	(86, 'rafaelsouzac@gmail.com', '2024-08-16', '13:00:44'),
+	(87, 'rafaelsouzac@gmail.com', '2024-08-16', '17:59:47'),
+	(88, 'rafaelsouzac@gmail.com', '2024-08-17', '13:48:02'),
+	(89, 'rafaelsouzac@gmail.com', '2024-08-17', '16:51:28'),
+	(90, 'rafaelsouzac@gmail.com', '2024-08-17', '16:56:26'),
+	(91, 'rafaelsouzac@gmail.com', '2024-08-17', '16:43:30'),
+	(92, 'rafaelsouzac@gmail.com', '2024-08-17', '16:51:24'),
+	(93, 'rafaelsouzac@gmail.com', '2024-08-17', '16:59:38'),
+	(94, 'rafaelsouzac@gmail.com', '2024-08-17', '17:03:24'),
+	(95, 'rafaelsouzac@gmail.com', '2024-08-17', '17:05:13'),
+	(96, 'rafaelsouzac@gmail.com', '2024-08-18', '10:27:59'),
+	(97, 'taila@lojathefit.com.br', '2024-08-18', '10:29:37'),
+	(98, 'rafaelsouzac@gmail.com', '2024-08-18', '10:30:42'),
+	(99, 'rafaelsouzac@gmail.com', '2024-08-19', '23:56:28'),
+	(100, 'rafaelsouzac@gmail.com', '2024-08-19', '08:41:26'),
+	(101, 'rafaelsouzac@gmail.com', '2024-08-19', '08:44:08'),
+	(102, 'taila@lojathefit.com.br', '2024-08-19', '08:49:36'),
+	(103, 'rafaelsouzac@gmail.com', '2024-08-19', '08:50:31'),
+	(104, 'rafaelsouzac@gmail.com', '2024-08-19', '11:31:00'),
+	(105, 'rafaelsouzac@gmail.com', '2024-08-19', '17:15:34'),
+	(106, 'rafaelsouzac@gmail.com', '2024-08-19', '17:26:01'),
+	(107, 'rafaelsouzac@gmail.com', '2024-08-20', '21:38:16'),
+	(108, 'rafaelsouzac@gmail.com', '2024-08-20', '21:58:49'),
+	(109, 'rafaelsouzac@gmail.com', '2024-08-20', '22:28:48'),
+	(110, 'rafaelsouzac@gmail.com', '2024-08-20', '22:53:24'),
+	(111, 'rafaelsouzac@gmail.com', '2024-08-20', '22:55:04'),
+	(112, 'rafaelsouzac@gmail.com', '2024-08-20', '22:59:25'),
+	(113, 'rafaelsouzac@gmail.com', '2024-08-20', '23:16:19'),
+	(114, 'rafaelsouzac@gmail.com', '2024-08-20', '08:41:17'),
+	(115, 'rafaelsouzac@gmail.com', '2024-08-20', '09:50:12'),
+	(116, 'rafaelsouzac@gmail.com', '2024-08-20', '10:39:21'),
+	(117, 'rafaelsouzac@gmail.com', '2024-08-20', '14:45:48'),
+	(118, 'rafaelsouzac@gmail.com', '2024-08-21', '07:46:18'),
+	(119, 'rafaelsouzac@gmail.com', '2024-08-21', '09:37:37'),
+	(120, 'rafaelsouzac@gmail.com', '2024-08-21', '16:23:35'),
+	(121, 'rafaelsouzac@gmail.com', '2024-08-22', '23:12:49'),
+	(122, 'rafaelsouzac@gmail.com', '2024-08-22', '07:40:17'),
+	(123, 'rafaelsouzac@gmail.com', '2024-08-22', '08:14:01'),
+	(124, 'rafaelsouzac@gmail.com', '2024-08-22', '09:43:37'),
+	(125, 'rafaelsouzac@gmail.com', '2024-08-23', '23:05:23'),
+	(126, 'rafaelsouzac@gmail.com', '2024-08-23', '10:13:32'),
+	(127, 'rafaelsouzac@gmail.com', '2024-08-23', '14:59:23');
 
-DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `apagarprodutos`()
-BEGIN
-TRUNCATE produtos;
-TRUNCATE produtoimagem;
-TRUNCATE produtoquantidade;
-TRUNCATE valorprodutos;
-END//
-DELIMITER ;
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `idcategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `clientes` (
+
+DROP TABLE IF EXISTS `categoriaprodutos`;
+CREATE TABLE IF NOT EXISTS `categoriaprodutos` (
+  `idcategoriaproduto` int(11) NOT NULL AUTO_INCREMENT,
+  `idcategoria` int(11) NOT NULL DEFAULT 0,
+  `idproduto` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`idcategoriaproduto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+DROP TABLE IF EXISTS `clientepedido`;
+CREATE TABLE IF NOT EXISTS `clientepedido` (
+  `idclientepedido` int(11) NOT NULL AUTO_INCREMENT,
   `idcliente` int(11) NOT NULL,
+  `idpedido` int(11) NOT NULL,
+  PRIMARY KEY (`idclientepedido`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `clientepedido` (`idclientepedido`, `idcliente`, `idpedido`) VALUES
+	(1, 4, 65),
+	(2, 5, 67),
+	(3, 6, 68),
+	(4, 7, 69),
+	(5, 9, 72);
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `idcliente` int(11) NOT NULL AUTO_INCREMENT,
   `nomecliente` varchar(50) DEFAULT NULL,
   `whatsapp` varchar(50) DEFAULT NULL,
-  `idusuarioface` varchar(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `idusuarioface` varchar(250) DEFAULT NULL,
+  `endereço` varchar(500) DEFAULT NULL,
+  `cepoubairro` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`idcliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+INSERT INTO `clientes` (`idcliente`, `nomecliente`, `whatsapp`, `idusuarioface`, `endereço`, `cepoubairro`) VALUES
+	(1, 'Chaves', '51992110905', NULL, NULL, NULL),
+	(2, 'Dona Florinda', '51992110905', NULL, NULL, NULL),
+	(3, 'Dona Florinda', '51992110905', NULL, NULL, NULL),
+	(4, 'Dona Florinda', '51992110905', NULL, NULL, NULL),
+	(5, 'Chiquinha', '51991214583', NULL, NULL, NULL),
+	(6, 'Kiko', '51992110905', NULL, NULL, NULL),
+	(7, 'Professor Girafales', '51992110905', NULL, NULL, NULL),
+	(9, 'Seu Barriga', '51991214583', NULL, NULL, NULL);
 
+DROP TABLE IF EXISTS `dadosfornecedor`;
 CREATE TABLE IF NOT EXISTS `dadosfornecedor` (
   `iddadosfornecedor` int(11) NOT NULL AUTO_INCREMENT,
   `nomecontato` varchar(50) DEFAULT NULL,
@@ -127,27 +205,21 @@ CREATE TABLE IF NOT EXISTS `dadosfornecedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `fornecedores`;
 CREATE TABLE IF NOT EXISTS `fornecedores` (
   `idfornecedor` int(11) NOT NULL AUTO_INCREMENT,
   `cartao` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`idfornecedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 INSERT INTO `fornecedores` (`idfornecedor`, `cartao`) VALUES
 	(1, '17110454366019084567972019366764.jpg'),
 	(3, '20230417_095153~2.jpg'),
-	(4, '20230417_095145~2.jpg');
+	(4, '20230417_095145~2.jpg'),
+	(5, '20240817_135218~2.jpg'),
+	(6, '20240817_135218~2.jpg');
 
-CREATE TABLE `listadeprodutos` (
-	`idproduto` INT(11) NOT NULL,
-	`titulo` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_unicode_ci',
-	`codigobarras` CHAR(15) NULL COLLATE 'utf8mb4_unicode_ci',
-	`tamanho` CHAR(8) NULL COLLATE 'utf8mb4_unicode_ci',
-	`nomeimagem` VARCHAR(250) NULL COLLATE 'utf8mb4_unicode_ci',
-	`valorproduto` DECIMAL(10,2) NOT NULL,
-	`custoproduto` DECIMAL(10,2) NOT NULL
-) ENGINE=MyISAM;
-
+DROP TABLE IF EXISTS `marketingplaces`;
 CREATE TABLE IF NOT EXISTS `marketingplaces` (
   `idmarketingplace` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0',
@@ -158,83 +230,104 @@ CREATE TABLE IF NOT EXISTS `marketingplaces` (
 INSERT INTO `marketingplaces` (`idmarketingplace`, `url`, `nomemarketingplace`) VALUES
 	(1, 'https://www.facebook.com', 'facebook');
 
+DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE IF NOT EXISTS `pedidos` (
   `idpedido` int(11) NOT NULL AUTO_INCREMENT,
   `dataregistro` date NOT NULL DEFAULT curdate(),
   `usuario` varchar(100) NOT NULL,
   `aberto` char(1) NOT NULL DEFAULT 'S' COMMENT 'S = SIM\r\nN = NÃO\r\nA = APAGADO\r\nF = FINALIZADO',
+  `Atualizado` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`idpedido`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-INSERT INTO `pedidos` (`idpedido`, `dataregistro`, `usuario`, `aberto`) VALUES
-	(3, '2023-12-10', 'rafaelsouzac@gmail.com', 'S'),
-	(4, '2024-05-18', 'rafaelsouzac@gmail.com', 'F'),
-	(5, '2024-05-20', 'rafaelsouzac@gmail.com', 'F'),
-	(6, '2024-05-20', 'rafaelsouzac@gmail.com', 'F'),
-	(7, '2024-05-20', 'rafaelsouzac@gmail.com', 'S'),
-	(8, '2024-05-19', 'rafaelsouzac@gmail.com', 'F'),
-	(9, '2024-05-19', 'rafaelsouzac@gmail.com', 'S'),
-	(10, '2024-05-19', 'rafaelsouzac@gmail.com', 'F'),
-	(11, '2024-05-19', 'rafaelsouzac@gmail.com', 'S'),
-	(12, '2024-05-19', 'rafaelsouzac@gmail.com', 'S'),
-	(13, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(14, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(15, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(16, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(17, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(18, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(19, '2024-07-24', 'rafaelsouzac@gmail.com', 'F'),
-	(20, '2024-07-25', 'rafaelsouzac@gmail.com', 'S'),
-	(21, '2024-07-25', 'rafaelsouzac@gmail.com', 'F'),
-	(22, '2024-07-25', 'rafaelsouzac@gmail.com', 'F'),
-	(23, '2024-07-25', 'rafaelsouzac@gmail.com', 'F'),
-	(24, '2024-07-25', 'rafaelsouzac@gmail.com', 'F'),
-	(25, '2024-07-27', 'rafaelsouzac@gmail.com', 'S'),
-	(26, '2024-08-04', 'rafaelsouzac@gmail.com', 'S'),
-	(27, '2024-08-04', 'rafaelsouzac@gmail.com', 'S'),
-	(28, '2024-08-04', 'rafaelsouzac@gmail.com', 'F'),
-	(29, '2024-08-06', 'rafaelsouzac@gmail.com', 'F'),
-	(30, '2024-08-09', 'taila@lojathefit.com.br', 'F'),
-	(31, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(32, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(33, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(34, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(35, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(36, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(37, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(38, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(39, '2024-08-10', 'rafaelsouzac@gmail.com', 'F'),
-	(40, '2024-08-13', 'taila@lojathefit.com.br', 'F'),
-	(41, '2024-08-13', 'taila@lojathefit.com.br', 'F'),
-	(42, '2024-08-13', 'rafaelsouzac@gmail.com', 'F'),
-	(43, '2024-08-13', 'rafaelsouzac@gmail.com', 'F'),
-	(44, '2024-08-14', 'rafaelsouzac@gmail.com', 'F'),
-	(45, '2024-08-14', 'taila@lojathefit.com.br', 'F'),
-	(46, '2024-08-14', 'rafaelsouzac@gmail.com', 'F'),
-	(47, '2024-08-14', 'taila@lojathefit.com.br', 'S'),
-	(48, '2024-08-14', 'taila@lojathefit.com.br', 'F'),
-	(49, '2024-08-14', 'rafaelsouzac@gmail.com', 'S');
+INSERT INTO `pedidos` (`idpedido`, `dataregistro`, `usuario`, `aberto`, `Atualizado`) VALUES
+	(3, '2023-12-10', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(4, '2024-05-18', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(5, '2024-05-20', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(6, '2024-05-20', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(7, '2024-05-20', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(8, '2024-05-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(9, '2024-05-19', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(10, '2024-05-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(11, '2024-05-19', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(12, '2024-05-19', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(13, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(14, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(15, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(16, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(17, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(18, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(19, '2024-07-24', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(20, '2024-07-25', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(21, '2024-07-25', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(22, '2024-07-25', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(23, '2024-07-25', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(24, '2024-07-25', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(25, '2024-07-27', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(26, '2024-08-04', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(27, '2024-08-04', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(28, '2024-08-04', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(29, '2024-08-06', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(30, '2024-08-09', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(31, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(32, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(33, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(34, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(35, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(36, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(37, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(38, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(39, '2024-08-10', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(40, '2024-08-13', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(41, '2024-08-13', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(42, '2024-08-13', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(43, '2024-08-13', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(44, '2024-08-14', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(45, '2024-08-14', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(46, '2024-08-14', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(47, '2024-08-14', 'taila@lojathefit.com.br', 'S', '2024-08-19 12:26:49'),
+	(48, '2024-08-14', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(49, '2024-08-14', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(50, '2024-08-15', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(51, '2024-08-16', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(52, '2024-08-16', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(53, '2024-08-16', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(54, '2024-08-18', 'rafaelsouzac@gmail.com', 'S', '2024-08-19 12:26:49'),
+	(55, '2024-08-18', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(56, '2024-08-18', 'taila@lojathefit.com.br', 'S', '2024-08-19 12:26:49'),
+	(57, '2024-08-18', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(58, '2024-08-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 12:26:49'),
+	(59, '2024-08-19', 'taila@lojathefit.com.br', 'S', '2024-08-19 12:26:49'),
+	(60, '2024-08-19', 'taila@lojathefit.com.br', 'F', '2024-08-19 12:26:49'),
+	(61, '2024-08-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 17:15:41'),
+	(62, '2024-08-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 23:17:16'),
+	(63, '2024-08-19', 'rafaelsouzac@gmail.com', 'F', '2024-08-19 23:42:16'),
+	(64, '2024-08-21', 'rafaelsouzac@gmail.com', 'F', '2024-08-21 08:56:45'),
+	(65, '2024-08-21', 'rafaelsouzac@gmail.com', 'F', '2024-08-21 23:12:55'),
+	(66, '2024-08-21', 'rafaelsouzac@gmail.com', 'S', '2024-08-21 23:23:03'),
+	(67, '2024-08-21', 'rafaelsouzac@gmail.com', 'F', '2024-08-21 23:23:25'),
+	(68, '2024-08-22', 'rafaelsouzac@gmail.com', 'F', '2024-08-22 08:17:09'),
+	(69, '2024-08-22', 'rafaelsouzac@gmail.com', 'A', '2024-08-22 09:52:50'),
+	(70, '2024-08-22', 'rafaelsouzac@gmail.com', 'A', '2024-08-22 09:56:55'),
+	(71, '2024-08-22', 'rafaelsouzac@gmail.com', 'F', '2024-08-22 10:24:03'),
+	(72, '2024-08-23', 'rafaelsouzac@gmail.com', 'F', '2024-08-23 10:13:37');
 
+DROP TABLE IF EXISTS `produtofornecedor`;
 CREATE TABLE IF NOT EXISTS `produtofornecedor` (
   `idprodutofornecedor` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) DEFAULT NULL,
   `idfornecedor` int(11) NOT NULL,
-  PRIMARY KEY (`idprodutofornecedor`),
-  KEY `FK_produtofornecedor_produtos` (`idproduto`),
-  KEY `FK_produtofornecedor_fornecedores` (`idfornecedor`),
-  CONSTRAINT `FK_produtofornecedor_fornecedores` FOREIGN KEY (`idfornecedor`) REFERENCES `fornecedores` (`idfornecedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_produtofornecedor_produtos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`idprodutofornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
+DROP TABLE IF EXISTS `produtoimagem`;
 CREATE TABLE IF NOT EXISTS `produtoimagem` (
   `idprodutoimagem` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) DEFAULT NULL,
   `nomeimagem` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`idprodutoimagem`),
-  KEY `FK_produtoimagem_produtos` (`idproduto`),
-  CONSTRAINT `FK_produtoimagem_produtos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`idprodutoimagem`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `produtoimagem` (`idprodutoimagem`, `idproduto`, `nomeimagem`) VALUES
 	(1, 1, 'ted1.jpg'),
@@ -248,17 +341,17 @@ INSERT INTO `produtoimagem` (`idprodutoimagem`, `idproduto`, `nomeimagem`) VALUE
 	(13, 5, 'legging_rosa_lisa3.webp'),
 	(14, 6, 'legging_marinho_lisa1.webp'),
 	(15, 6, 'legging_marinho_lisa2.png'),
-	(16, 6, 'legging_marinho_lisa3.webp');
+	(16, 6, 'legging_marinho_lisa3.webp'),
+	(17, 7, 'legging_rosa_lisa1.webp');
 
+DROP TABLE IF EXISTS `produtoquantidade`;
 CREATE TABLE IF NOT EXISTS `produtoquantidade` (
   `idprodutoquantidade` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) DEFAULT NULL,
   `quantidade` int(11) DEFAULT 0,
   `dataregistro` date NOT NULL DEFAULT curdate(),
-  PRIMARY KEY (`idprodutoquantidade`),
-  KEY `FK_produtoquantidade_produtos` (`idproduto`),
-  CONSTRAINT `FK_produtoquantidade_produtos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  PRIMARY KEY (`idprodutoquantidade`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 INSERT INTO `produtoquantidade` (`idprodutoquantidade`, `idproduto`, `quantidade`, `dataregistro`) VALUES
 	(3, 2, 11, '2024-07-29'),
@@ -268,8 +361,11 @@ INSERT INTO `produtoquantidade` (`idprodutoquantidade`, `idproduto`, `quantidade
 	(7, 2, 3, '2024-07-31'),
 	(8, 1, 2, '2024-07-31'),
 	(9, 2, 3, '2024-08-04'),
-	(10, 1, 1, '2024-08-04');
+	(10, 1, 1, '2024-08-04'),
+	(11, 2, 7, '2024-08-19'),
+	(12, 1, 1, '2024-08-19');
 
+DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
   `idproduto` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(50) NOT NULL,
@@ -285,25 +381,24 @@ INSERT INTO `produtos` (`idproduto`, `titulo`, `tamanho`, `cor`, `descricao`, `a
 	(1, 'Casaco Teddy Feminino Curto Cor Preto', 'G', 'Preto', 'Casaco Teddy Feminino Curto Cor Preta R$60.00. \r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista R$60.00 ou pix  R$65.00 no cartão.', '1', '11'),
 	(2, 'Casaco Teddy Feminino Curto Cor Branco', 'G', 'Branco', 'Casaco Teddy Feminino Curto Cor Branco R$60.00. \r\nTELE VALOR MÁXIMO R$ 15.00\r\nNÃO COBRAMOS EM CASO DE TROCAS.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. Entregamos no local em que você estiver. Porto Alegre, Cachoerinha, Canoas, Alvorada, Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- Pague somente quando receber.\r\n\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- À vista R$60.00 ou pix  R$65.00 no cartão.', '1', '12'),
 	(4, 'Casaco Teddy curto preto', 'G', 'Preto', 'Casaco Teddy Feminino Curto Cor Preta R$60.00. \r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n\r\n- Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista R$60.00 ou pix  R$65.00 no cartão.', '1', '13'),
-	(5, 'Calça Legging Feminina Rosa Lisa em Suplex - Confo', 'P M G GG', 'Rosa', 'Calça Legging Feminina Rosa Lisa em Suplex - Conforto e Estilo.\r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista ou pix R$50.00   \r\n- No cartão R$65.00 ', '1', NULL),
-	(6, 'Legging Feminina Azul Marinho Lisa de Suplex - Ide', 'P M G GG', 'Azul Marin', 'Calça Legging Feminina Azul Marinho Lisa em Suplex - Conforto e Estilo.\r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Azul Marinho\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoeirinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaíba.\r\n\r\n- À vista ou pix R$50.00   \r\n- No cartão R$65.00 ', '1', NULL),
-	(7, 'Legging 3d', NULL, NULL, NULL, '1', NULL),
-	(8, 'Legging Tratorada', NULL, NULL, NULL, '1', NULL),
-	(9, 'Legging Mantaria', NULL, NULL, NULL, '1', NULL),
-	(10, 'Legging courino', NULL, NULL, NULL, '1', NULL),
-	(11, 'Casaco Teddy Feminino Longo Cor Preto', 'G', 'Preto', 'Casaco Teddy Feminino Longo Cor Preta R$80.00. \r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista ou pix R$80.00   \r\n- R$65.00 no cartão.', '1', NULL),
-	(12, 'Casaco Teddy Feminino Longo Cor Branco', 'G', 'Branco', 'Casaco Teddy Feminino Longo Cor Branco R$80.00. \r\nTELE VALOR MÁXIMO R$ 15.00\r\nNÃO COBRAMOS EM CASO DE TROCAS.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. Entregamos no local em que você estiver. Porto Alegre, Cachoerinha, Canoas, Alvorada, Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- Pague somente quando receber.\r\n\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- À vista R$80.00 ou pix  \r\n- R$85.00 no cartão.', '1', NULL);
+	(5, 'Calça Legging Feminina Rosa Lisa em Suplex - Confo', 'P M G GG', 'Rosa', 'Calça Legging Feminina Rosa Lisa em Suplex - Conforto e Estilo.\r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista ou pix R$50.00   \r\n- No cartão R$65.00 ', '1', '16'),
+	(6, 'Legging Feminina Azul Marinho Lisa de Suplex - Ide', 'P M G GG', 'Azul Marin', 'Calça Legging Feminina Azul Marinho Lisa em Suplex - Conforto e Estilo.\r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Azul Marinho\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoeirinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaíba.\r\n\r\n- À vista ou pix R$50.00   \r\n- No cartão R$65.00 ', '1', '17'),
+	(7, 'Legging 3d', 'P M G GG', 'Preta', 'Calça Legging 3d', '1', '14'),
+	(8, 'Legging Tratorada', 'P M G GG', 'PRETA', 'Calça Legging Suplex Com Detalhes Em Courino', '1', '15'),
+	(9, 'Legging Mantaria', 'P M G GG', 'PRETA', 'Calça Legging Suplex Com Detalhes Em Courino', '1', '19'),
+	(10, 'Legging courino', 'P M G GG', 'PRETA', 'Calça Em Courino Vegetal', '1', '18'),
+	(11, 'Casaco Teddy Feminino Longo Cor Preto', 'G', 'Preto', 'Casaco Teddy Feminino Longo Cor Preta R$80.00. \r\n\r\n- Pague somente quando receber.\r\n\r\n- TELE VALOR MÁXIMO R$ 15.00\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. \r\n  Entregamos no local em que você estiver. \r\n  Porto Alegre, Cachoerinha, Canoas, Alvorada, \r\n  Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- À vista ou pix R$80.00   \r\n- R$65.00 no cartão.', '1', '20'),
+	(12, 'Casaco Teddy Feminino Longo Cor Branco', 'G', 'Branco', 'Casaco Teddy Feminino Longo Cor Branco R$80.00. \r\nTELE VALOR MÁXIMO R$ 15.00\r\nNÃO COBRAMOS EM CASO DE TROCAS.\r\n\r\n- Cores: Preto, Rosa, Branco, Nude\r\n\r\n- TELE-ENTREGA mais barato que estacionamento. Entregamos no local em que você estiver. Porto Alegre, Cachoerinha, Canoas, Alvorada, Gravataí, Viamão, Eldorado do Sul e Guaiba.\r\n\r\n- Pague somente quando receber.\r\n\r\n- Troca garantida SEM COBRANÇA DE TELE.\r\n\r\n- À vista R$80.00 ou pix  \r\n- R$85.00 no cartão.', '1', '21');
 
+DROP TABLE IF EXISTS `produtospedidos`;
 CREATE TABLE IF NOT EXISTS `produtospedidos` (
   `idprodutopedido` int(11) NOT NULL AUTO_INCREMENT,
   `codigobarra` varchar(25) DEFAULT NULL,
   `idpedido` int(11) DEFAULT NULL,
   `quantidade` int(11) NOT NULL,
   `apagado` char(1) NOT NULL DEFAULT 'N' COMMENT 'S = SIM\r\nN = NÃO',
-  PRIMARY KEY (`idprodutopedido`),
-  KEY `FK_produtospedidos_pedidos` (`idpedido`),
-  CONSTRAINT `FK_produtospedidos_pedidos` FOREIGN KEY (`idpedido`) REFERENCES `pedidos` (`idpedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  PRIMARY KEY (`idprodutopedido`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 INSERT INTO `produtospedidos` (`idprodutopedido`, `codigobarra`, `idpedido`, `quantidade`, `apagado`) VALUES
 	(1, '12', 13, 1, 'N'),
@@ -339,18 +434,37 @@ INSERT INTO `produtospedidos` (`idprodutopedido`, `codigobarra`, `idpedido`, `qu
 	(31, '12', 45, 2, 'N'),
 	(32, '11', 46, 4, 'N'),
 	(33, '11', 48, 3, 'N'),
-	(34, '12', 48, 5, 'N');
+	(34, '12', 48, 5, 'N'),
+	(35, '12', 50, 1, 'N'),
+	(36, '12', 51, 1, 'N'),
+	(37, '12', 52, 2, 'N'),
+	(38, '12', 53, 1, 'N'),
+	(39, '12', 55, 2, 'N'),
+	(40, '11', 55, 1, 'N'),
+	(41, '11', 57, 4, 'N'),
+	(42, '12', 57, 1, 'N'),
+	(43, '12', 58, 3, 'N'),
+	(44, '11', 60, 4, 'N'),
+	(45, '12', 60, 5, 'N'),
+	(46, '12', 61, 1, 'N'),
+	(47, '12', 62, 1, 'N'),
+	(48, '11', 63, 6, 'N'),
+	(49, '16', 64, 3, 'N'),
+	(50, '16', 65, 1, 'N'),
+	(51, '14', 67, 1, 'N'),
+	(52, '14', 68, 5, 'N'),
+	(53, '16', 69, 10, 'N'),
+	(54, '11', 70, 10, 'N'),
+	(55, '12', 71, 2, 'N'),
+	(56, '16', 72, 5, 'N');
 
+DROP TABLE IF EXISTS `produtospublicados`;
 CREATE TABLE IF NOT EXISTS `produtospublicados` (
   `idprodutopublicado` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) NOT NULL DEFAULT 0,
   `idmarketingplace` int(11) NOT NULL DEFAULT 0,
   `dataregistro` date NOT NULL DEFAULT curdate(),
-  PRIMARY KEY (`idprodutopublicado`),
-  KEY `FK_produtospublicados_produtos` (`idproduto`),
-  KEY `FK_produtospublicados_marketingplaces` (`idmarketingplace`),
-  CONSTRAINT `FK_produtospublicados_marketingplaces` FOREIGN KEY (`idmarketingplace`) REFERENCES `marketingplaces` (`idmarketingplace`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_produtospublicados_produtos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`idprodutopublicado`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `produtospublicados` (`idprodutopublicado`, `idproduto`, `idmarketingplace`, `dataregistro`) VALUES
@@ -358,6 +472,7 @@ INSERT INTO `produtospublicados` (`idprodutopublicado`, `idproduto`, `idmarketin
 	(25, 4, 1, '2024-07-04'),
 	(26, 2, 1, '2024-07-04');
 
+DROP TABLE IF EXISTS `usuariomarketing`;
 CREATE TABLE IF NOT EXISTS `usuariomarketing` (
   `idusuariomarketing` int(11) NOT NULL AUTO_INCREMENT,
   `idmarketing` int(11) DEFAULT NULL,
@@ -369,6 +484,7 @@ INSERT INTO `usuariomarketing` (`idusuariomarketing`, `idmarketing`, `idusuario`
 	(2, 1, 2),
 	(3, 1, 1);
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `idusuario` int(11) NOT NULL AUTO_INCREMENT,
   `nomeusuario` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -379,13 +495,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 INSERT INTO `usuarios` (`idusuario`, `nomeusuario`, `senha`) VALUES
 	(1, 'eliane.souza1953@hotmail.com', 'elianeluiz');
 
+DROP TABLE IF EXISTS `valorespedidos`;
 CREATE TABLE IF NOT EXISTS `valorespedidos` (
   `idrecebimento` int(11) NOT NULL AUTO_INCREMENT,
   `idpedido` int(11) DEFAULT NULL,
   `tipopagamento` char(3) NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   PRIMARY KEY (`idrecebimento`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 INSERT INTO `valorespedidos` (`idrecebimento`, `idpedido`, `tipopagamento`, `valor`) VALUES
 	(1, 13, 'din', 60.00),
@@ -409,8 +526,29 @@ INSERT INTO `valorespedidos` (`idrecebimento`, `idpedido`, `tipopagamento`, `val
 	(29, 44, 'din', 60.00),
 	(30, 45, 'pix', 120.00),
 	(31, 46, 'deb', 240.00),
-	(32, 48, 'pix', 480.00);
+	(32, 48, 'pix', 480.00),
+	(33, 50, 'din', 60.00),
+	(34, 51, 'din', 60.00),
+	(35, 52, 'pix', 120.00),
+	(36, 53, 'din', 60.00),
+	(37, 55, 'din', 90.00),
+	(38, 55, 'pix', 90.00),
+	(39, 57, 'deb', 300.00),
+	(40, 58, 'din', 180.00),
+	(41, 60, 'pix', 540.00),
+	(42, 61, 'din', 50.00),
+	(43, 62, 'din', 60.00),
+	(44, 63, 'deb', 360.00),
+	(45, 64, 'cre', 160.00),
+	(46, 65, 'din', 50.00),
+	(47, 67, 'deb', 50.00),
+	(48, 68, 'cre', 275.00),
+	(49, 69, 'cre', 525.00),
+	(50, 70, 'deb', 580.00),
+	(51, 71, 'pix', 120.00),
+	(52, 72, 'pix', 250.00);
 
+DROP TABLE IF EXISTS `valorprodutos`;
 CREATE TABLE IF NOT EXISTS `valorprodutos` (
   `idvalorproduto` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) NOT NULL,
@@ -419,41 +557,19 @@ CREATE TABLE IF NOT EXISTS `valorprodutos` (
   `ativo` char(1) NOT NULL,
   `valorproduto` decimal(10,2) NOT NULL,
   `custoproduto` decimal(10,2) NOT NULL DEFAULT 0.00,
-  PRIMARY KEY (`idvalorproduto`),
-  KEY `FK_valorprodutos_produtos` (`idproduto`),
-  CONSTRAINT `FK_valorprodutos_produtos` FOREIGN KEY (`idproduto`) REFERENCES `produtos` (`idproduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`idvalorproduto`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `valorprodutos` (`idvalorproduto`, `idproduto`, `tipopagamento`, `dataregistro`, `ativo`, `valorproduto`, `custoproduto`) VALUES
 	(1, 1, 'DI', '2024-06-15', '1', 60.00, 30.00),
 	(2, 2, 'DI', '2024-06-15', '1', 60.00, 30.00),
 	(3, 4, 'DI', '2024-06-29', '1', 60.00, 30.00),
-	(4, 5, 'DI', '2024-07-05', '1', 50.00, 25.00);
-
-DROP TABLE IF EXISTS `listadeprodutos`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `listadeprodutos` AS SELECT 
-    `p`.`idproduto` AS `idproduto`,
-    `p`.`titulo` AS `titulo`,
-    `p`.`codigobarras` AS `codigobarras`,
-    `p`.`tamanho` AS `tamanho`,
-    (SELECT `pimg`.`nomeimagem` 
-     FROM `produtoimagem` `pimg` 
-     WHERE `pimg`.`idproduto` = `p`.`idproduto` 
-     LIMIT 1) AS `nomeimagem`,
-    `pval`.`valorproduto` AS `valorproduto`,
-    `pval`.`custoproduto` AS `custoproduto`
-FROM 
-    `produtos` `p`
-JOIN 
-    `valorprodutos` `pval` 
-    ON `p`.`idproduto` = `pval`.`idproduto`
-WHERE 
-    `p`.`ativo` = 1
-ORDER BY 
-    `p`.`titulo` ;
-
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+	(4, 5, 'DI', '2024-07-05', '1', 50.00, 25.00),
+	(5, 7, 'DI', '2024-08-20', '1', 50.00, 25.00),
+	(6, 3, 'DI', '2024-08-21', '1', 60.00, 30.00),
+	(7, 6, 'DI', '2024-08-20', '', 0.00, 0.00),
+	(8, 8, 'DI', '2024-08-21', '1', 60.00, 25.00),
+	(9, 9, 'DI', '2024-08-21', '1', 60.00, 25.00),
+	(10, 10, 'DI', '2024-08-21', '1', 60.00, 25.00),
+	(11, 11, 'DI', '2024-08-21', '1', 60.00, 25.00),
+	(12, 12, 'DI', '2024-08-21', '1', 60.00, 25.00);

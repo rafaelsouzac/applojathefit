@@ -22,7 +22,7 @@ include("{$dirinclude}");
 function Relatorio_detalhado_vendas(){
 	
 
-	$arr_retorno = array("tabela_pedidos"=>array(),  "tabela_valores_pedidos"=>array());
+	$arr_retorno = array("tabela_pedidos"=>array(),  "tabela_valores_pedidos"=>array(), "cliente_whatsapp"=>array());
 	$arr_retorno['tabela_pedidos'] = Tabela_Pedidos();
 	if($arr_retorno['tabela_pedidos'] == 0){
 		return 0;
@@ -33,6 +33,7 @@ function Relatorio_detalhado_vendas(){
 		while($int_inicio_loop < $int_fim_loop){
 			$arr_retorno['produtos_pedidos_quantidade'][] = Produtos_Pedido_Quantidade($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
 			$arr_retorno['tabela_valores_pedidos'][] = Tabela_Valores_Pedidos($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
+			$arr_retorno['cliente_whatsapp'][] = ContatoWhats($arr_retorno['tabela_pedidos']['idpedido'][$int_inicio_loop]);
 			$int_inicio_loop++;
 		}
 

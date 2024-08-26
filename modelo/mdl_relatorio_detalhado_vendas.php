@@ -13,7 +13,7 @@ function Tabela_Pedidos(){
 
 	$dataHoje = date("Y-m-d");
 
-	$strSql = "select idpedido,  usuario from pedidos where dataregistro = '{$dataHoje}' and aberto = 'F'";
+	$strSql = "select idpedido,  usuario, dataregistro from pedidos where dataregistro = '{$dataHoje}' and aberto = 'F'";
 
 
   	$retExec = $execSql->query($strSql);
@@ -24,6 +24,7 @@ function Tabela_Pedidos(){
 		while($linha = $retExec->fetch_assoc()){
 			$arrRetorno['idpedido'][] = $linha['idpedido'];
 			$arrRetorno['usuario'][] = $linha['usuario'];
+			$arrRetorno['dataregistro'][] = $linha['dataregistro'];
 		}
 	
 		return $arrRetorno;	
@@ -66,6 +67,24 @@ function Tabela_Valores_Pedidos($int_id_pedido = 0){
 		$arrRetorno['valor'][] = $linha['valor'];
 	}
 
+	return $arrRetorno;
+}
+
+function ContatoWhats($intPedido = 0){
+
+	$execSql = acesso();
+
+	$strSql = "SELECT clientes.nomecliente AS nomecliente, clientes.whatsapp AS whatsapp
+	FROM clientes, clientepedido WHERE 
+	clientes.idcliente = clientepedido.idcliente
+	AND clientepedido.idpedido = {$intPedido}";
+
+  	$retExec = $execSql->query($strSql);
+
+	while($linha = $retExec->fetch_assoc()){
+		$arrRetorno['nomecliente'][] = $linha['nomecliente'];
+		$arrRetorno['whatsapp'][] = $linha['whatsapp'];
+	}
 	return $arrRetorno;
 }
 
