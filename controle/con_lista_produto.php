@@ -39,3 +39,12 @@ if(isset($_POST['funcaocarrinho'])){
     $strUrl = "../lista_produto.php?cp=$intCodigoBarra";
     header("Location: $strUrl");
 }
+
+if(isset($_GET['cb'])){
+    $int_codigo_barra_produto = $_GET['cb'];
+    $ret_produto = listaProdutos($int_codigo_barra_produto);
+    $arr_produto = $ret_produto->fetch_assoc();
+    ApagaProduto($arr_produto['idproduto']);
+    $strUrl = "../lista_produto.php";
+    header("Location: $strUrl");
+}

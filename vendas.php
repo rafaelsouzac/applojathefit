@@ -31,13 +31,13 @@ if(session_status() !== PHP_SESSION_ACTIVE)
 
         switch ($intErro) {
             case 1:
-                echo("  alert('Digite o código do produto'\n);");    
+                echo("  alert('Digite o código do produto');\n");    
                 break;                
             case 2:
-                echo("  alert('Código do produto inválido.'\n);");
+                echo("  alert('Código do produto inválido.');\n");
                 break;                
             case 3:
-                echo("  alert('Whats Cadastrado.'\n);");
+                echo("  alert(\"Whats Cadastrado.\");\n");
                 break;                    
             default:
                 // code...

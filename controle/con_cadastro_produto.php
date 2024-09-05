@@ -20,6 +20,7 @@ include("{$dirinclude}");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
+    
     // Função para validar e limpar dados do formulário
     function test_input($data) {
         $data = trim($data);
@@ -29,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Validação do campo 'Imagem'
-    if (isset($_FILES["imagem"]["name"])) {
+    if ($_FILES["imagem"]["name"] !== '') {
+
 
         function resizeImage($file, $output, $w, $h) {
             list($width, $height) = getimagesize($file);
@@ -43,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $dirTemp = $_FILES["imagem"]["tmp_name"];
         $dirDest = $dir."incluir".$barra."mult".$barra."img".$barra."".$imagemNome;
         move_uploaded_file($dirTemp, $dirDest);
-        resizeImage($dirDest, $dirDest, 260, 140); 
+        resizeImage($dirDest, $dirDest, 272, 160); 
     }
     else{
         $imagemNome = "logo_thefit.gif";
@@ -55,6 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validação do campo 'Descrição'
     $descricao = test_input($_POST["descricao"]);
 
+    //validação do campo 'Categoria'
+    //$str_campo_categoria = test_input($_POST["categoria"]);
+    $str_campo_categoria  = "";
+
     // Validação do campo 'Tamanho'
     $tamanho = array();
     $tamanho = $_POST["tamanho"];
@@ -63,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validação do campo 'Cores'
     $cor = array();
     $cor = $_POST["cor"];
+    print_r($cor);
+
     $intContadorCor = 0;
 
     // Validação do campo 'Quantidade'
@@ -71,14 +79,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validação do campo 'Valor do Produto'
     $valorProduto = test_input($_POST["valorproduto"]);
     
-
     // Validação do campo 'Custo do Produto'
-    $custoProduto = test_input($_POST["custoproduto"]);
-
+    //$custoProduto = test_input($_POST["custoproduto"]);
+    $custoProduto = 0;
+    
     /******************************************************/
     while($intContadorCor < count($cor)){
         while($intContadorTamanho < count($tamanho)){
-            cadastraProduto($titulo, $tamanho[$intContadorTamanho], $cor[$intContadorCor], $descricao);
+
+            cadastraProduto($titulo, $tamanho[$intContadorTamanho], $cor[$intContadorCor], $descricao, $str_campo_categoria);
+            
             $intIdProduto = selecionaUltimoProdutoInserido();
 
             $intIdValorProduto = cadastrValorProduto($intIdProduto, $valorProduto, $custoProduto);
@@ -89,7 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             geraCodigoBarra($intIdProduto, $intIdValorProduto, $cor[$intContadorCor]);
             $intContadorTamanho++;
+        
         }
+        $intContadorTamanho = 0;
         $intContadorCor++;
     }
 

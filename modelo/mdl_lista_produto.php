@@ -19,7 +19,12 @@ function listaDeProdutosAtivos($intCodigoBarras = NULL){
 	if(is_null($intCodigoBarras)){
 		$strSql = "SELECT * FROM listadeprodutos";
 	}else{
-		$strSql = "SELECT * FROM listadeprodutos where codigobarras = $intCodigoBarras";
+		if(ctype_digit($intCodigoBarras)){
+			$strSql = "SELECT * FROM listadeprodutos where codigobarras like '%".$intCodigoBarras."%'";
+		}else{
+			$strSql = "SELECT * FROM listadeprodutos where titulo like '%".$intCodigoBarras."%'";
+		}
+		
 	}
 	$retExecSql = ExecutaSql($strSql);
 	return $retExecSql;
@@ -34,4 +39,17 @@ function UltimaContagem($idproduto){
 
 	return $retExecSql;
 
+}
+
+function ApagaProduto($intIdProduto){
+	$str_sql = "delete from produtoimagem where idproduto = {$intIdProduto}";
+	ExecutaSql($str_sql);
+
+	$str_sql = "delete from valorprodutos where idproduto = {$intIdProduto}";
+	ExecutaSql($str_sql);
+
+	$str_sql = "delete from produtos where idproduto = {$intIdProduto}";
+	ExecutaSql($str_sql);
+
+	return;
 }

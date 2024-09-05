@@ -3,11 +3,11 @@ header("Content-type: text/html; charset=utf-8");
 
 include_once 'mdl_banco.php';
 
-function cadastraProduto($titulo, $tamanho, $cor, $descricao){
+function cadastraProduto($titulo, $tamanho, $cor, $descricao, $categoria){
 
 	$execSql = acesso();
 	
-	$strSql = "INSERT INTO produtos(titulo, tamanho, cor, descricao) VALUES('{$titulo}', '{$tamanho}', '{$cor}', '{$descricao}')";
+	$strSql = "INSERT INTO produtos(titulo, tamanho, cor, descricao, categoria) VALUES('{$titulo}', '{$tamanho}', '{$cor}', '{$descricao}', '{$categoria}')";
 
 	$execSql->query($strSql);
 
@@ -31,11 +31,14 @@ function cadastrValorProduto($intIdProduto, $valorProduto, $custoProduto){
 
 	$dataHoje = date('Y-m-d');
 
-	$strSql = "INSERT INTO `valorprodutos`(`idproduto`,`tipopagamento`,  `dataregistro`, `ativo`, `valorproduto`, `custoproduto`) VALUES ({$intIdProduto}, 'DI','{$dataHoje}','1','{$valorProduto}','{$custoProduto}')";
-
 	$execSql = acesso();
+
+	$strSql = "SET time_zone = '-03:00'";
 	$execSql->query($strSql);
 	
+	$strSql = "INSERT INTO `valorprodutos`(`idproduto`,`tipopagamento`,  `dataregistro`, `ativo`, `valorproduto`, `custoproduto`) VALUES ({$intIdProduto}, 'DI','{$dataHoje}','1','{$valorProduto}','{$custoProduto}')";
+	$execSql->query($strSql);
+
 	$strSql = "SELECT idvalorproduto from valorprodutos ORDER BY idvalorproduto DESC LIMIT 0,1";
 	$retSql = $execSql->query($strSql)->fetch_assoc();
 	

@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $dirDest = $dir."incluir".$barra."mult".$barra."img".$barra."".$imagemNome;
 
         move_uploaded_file($dirTemp, $dirDest);
-        resizeImage($dirDest, $dirDest, 260, 140); 
+        resizeImage($dirDest, $dirDest, 238, 140); 
         $intRet = cadastraFornecedor($imagemNome);
     }
     // Redirecionar para uma página de sucesso, se necessário

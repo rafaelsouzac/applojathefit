@@ -142,9 +142,8 @@
                             <td class="apagar">
                                 <?php
                                         ///FORMAT STRING PARA ENVIO POR WHATSAPP
-                                        $str_final_mensagem_whats = "------------------------------\nvalor total compra: R$ $dbl_valor_compra.00\n------------------------------\nVeja nossas novidades no\nInstagram ou Facebook: @lojathefit\nWhatsapp: 51-992110905\nhttps://www.lojathefitonline.com.br";
+                                        $str_final_mensagem_whats = "------------------------------\nvalor total compra: R$ $dbl_valor_compra.00\n------------------------------\nVeja nossas novidades no\nInstagram ou Facebook: @lojathefit\n";
                                         $str_mensagem_link_whats .= $str_produtos_mensagem_link_whats.$str_final_mensagem_whats;
-                                        echo($str_mensagem_link_whats);
                                         $str_mensagem_link_whats = urlencode($str_mensagem_link_whats);
                                     ?>
                                 <a href="controle/con_relatorio_detalhado_vendas.php?ped=<?php echo("{$ret_relatorio_datalhado['tabela_pedidos']['idpedido'][$int_cont_pedidos]}"); ?>">Apagar</a>
@@ -153,9 +152,7 @@
                             <?php
                                 //buscar info se há cadastro do whats para envio ou se tem que cadastrar usuario.
                             ?>
-                            <!--<a href="cadastro_whats_vendas.php?ped=<?php echo("{$ret_relatorio_datalhado['tabela_pedidos']['idpedido'][$int_cont_pedidos]}"); ?>&pag=1">Enviar Recibo Por Whats</a>-->
                             <a href="https://wa.me/55<?php print($ret_relatorio_datalhado['cliente_whatsapp'][$int_cont_pedidos]['whatsapp'][0]);?>?text=<?php echo($str_mensagem_link_whats);?>">Enviar Recibo Por Whats</a>
-
                         </td>
                         </tr>
                     </tbody>

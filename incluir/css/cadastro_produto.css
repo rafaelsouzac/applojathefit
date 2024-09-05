@@ -1,165 +1,150 @@
 @charset "utf-8";
 /* CSS Document */
-
-html {
-    background:#ffffff url('../mult/img/fundo_textura.gif') repeat fixed 0 0;
-    box-sizing: border-box;
-}
-
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-
-body {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 14px;
-	width: 100%;
-	height: 100%;
-}
-
-
-/*************************************** MENU *********************************/
-header {
-    background-color: #003b66;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Estilo para o menu drop-down */
-.menu {
-    text-align: center;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 0 20px; /* Espaçamento entre os itens do menu */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #003b66;
-    min-width: 90px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;   
-}
-
-/************************************ FIM MENU ********************************/
-/******************************* PARTE SUPERIOR FIXA **************************/
-.superior{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    height: 177px;
-}
-
-
-.linha{
-    display: flex;
-    margin: 5px 2px 2px 2px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-
-.coluna{
-    margin: 5px;
-    width: 100%;
-    display: flex;
-    text-align: center;
-}
-
-#campo-texto{
-    width: 145px;
-    margin-left: 18px;
-    height: 30px;
-}
-
-#botao-add{
-    margin-left: 8px;
-    color: #fff;
-    background-color: #003b66;
-    height: 29px;
-    width: 80px;
-    border: none;
-}
-/***************************** FIM PARTE SUPERIOR FIXA ************************/
-/******************************* PARTE CENTRO SCROLL **************************/
-.linhaprincipal{
+/***************************** FROMULÁRIO DE CADASTRO **************************/
+.div_principla{
     width: 100%;
     display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 10px;
-    overflow-y: auto;
 }
-.linhaform{
-    display: inline-block;
+.procura_imagem{
+    margin: 5px;
     margin-top: 10px;
+    background-color:#003b66;
+    font-size: 16px;
+    padding: 3px;
+    color:white;
+    letter-spacing: 1px;
 }
-#titulo{
-    margin-left: 28px;
+.linha_form_cadastro_produto{
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
-#descricao{
-    width: 160px;
+.linha_form_cadastro_produto span{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    background-color: #003b66;
+    display: inline-block;
+    width: 99%;
+    padding: 3px;
+    color:white;
+    letter-spacing: 1px;
 }
-.tamanho-p{
+.titulo{
+    margin-top: 10px;
+    display: flex;
+    margin-left: 33px;
+}
+/************************** COLUNAS TAMANHOS *****************************/
+.coluna_tamanhos{
+    display: flex;
+}
+.colunas_tamanhos_esquerda{
+    width: 50%;
+}
+.colunas_tamanhos_centro{
+    width: 25%;
+    text-align: center;
+}
+.colunas_tamanhos_direita{
+    width: 25%;
+}
+.colunas_tamanhos_direita  label {
+    display: block;
     margin-left: 20px;
 }
-.tamanho-g{
+.colunas_tamanhos_centro  label {
+    display: block;
+}
+.colunas_tamanhos_esquerda label{
+    display: block;
+}
+.colunas_tamanhos_esquerda input{
     margin-left: 25px;
+    margin-bottom: 10px;
 }
-.linhacor{
-    margin-top: 10px;
+.colunas_tamanhos_centro input{
+    margin-bottom: 24px;
 }
-.linhabotao{
-    width: 250px;
-    height: 30px;
-    padding: 15px;
+.colunas_tamanhos_direita input{
+    margin-left: 22px;
+    margin-bottom: 24px;
 }
-.linhabotao{
-    width: 250px;
-    height: 50px;
+/************************** COLUNAS CORES *****************************/
+.coluna_cores{
+    display: flex;
+}
+.coluna_esquerda_cores{
+    text-align: left;
+    width: 34%;
+}
+.coluna_centro_cores{
+    width: 33%;
+}
+.coluna_direita_cores{
+    width: 33%;
+}
+.coluna_direita_cores  label {
+    display: block;
+}
+.coluna_centro_cores  label {
+    display: block;
+}
+.coluna_esquerda_cores label{
+    display: block;
+}
+.coluna_esquerda_cores input{
+    margin-bottom: 10px;
+}
+.coluna_centro_cores input{
+    margin-bottom: 10px;
+}
+.coluna_direita_cores input{
+    margin-bottom: 10px;
+}
+/*******************************    CAMPOS EXTRAS *********************************/
+.campos_extras{
+    display: block;
+    margin-bottom: 15px;
+}
+.linha_quantidade label{
+    display: flex;
+    margin-left: 3px;
+
+}
+.linha_quantidade input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+}
+.linha_valorproduto label{
+    display: flex;
+    margin-left: 3px;
+}
+.linha_valorproduto input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+}
+.linha_custoproduto label{
+    display: flex;
+    margin-left: 3px;
+}
+.linha_custoproduto input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+}
+.linha_botao_submit{
+    padding: 5px;
     text-align: center;
 }
-.fundo{
-    width: 250px;
-    height: 30px;
-    background-color: #003b66;
-    padding: 6px;
-    color: white;
-}
-
-#botaoenvio{
+.linha_botao_submit input{
     width: 100px;
-    border: none;
     height: 30px;
     background-color: #003b66;
     color: white;
-    margin-bottom: 30px;
-
+    letter-spacing: 2px;
 }
-
-.codigobarra{
-    background-color: lightgoldenrodyellow;
-    color: black;
-}
-/***************************** FIM PARTE CENTRO SCROLL ************************/
-/***************************** PARTE INFERIOR SCROLL **************************/
-/***************************** FIM PARTE INFERIOR SCROLL **********************/
+/***************************** FIM FROMULÁRIO DE CADASTRO *********************/
