@@ -3,7 +3,6 @@
             if(isset($_SESSION['vendas'])){
 
                 $intTamanhoArray = count($_SESSION['vendas']['codigobarra']);
-
                 $intContador = 0;
                 $intItensTotal = 0;
                 $dblValorTotalCompra = 0.00;
@@ -43,7 +42,6 @@
                     </div>
                     <div class="coluna-quant">
                         <form action="controle/con_vendas.php" method="post" name="selecaopagamento" enctype="application/x-www-form-urlencoded">
-                            
                             <input id="campo-texto-quantidade" name="quantidade" type="text" placeholder="<?php echo("{$_SESSION['vendas']['quantidade'][$intContador]}"); ?>" value="">
                     </div>
                     <div class="coluna-apg">

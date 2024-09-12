@@ -103,6 +103,14 @@
 .coluna_direita_cores input{
     margin-bottom: 10px;
 }
+.codigobarra{
+    margin: auto;
+    margin-top: 10px;
+    width: 96%;
+    background-color: #003b66;
+    color: white;
+    padding: 5px;
+}
 /*******************************    CAMPOS EXTRAS *********************************/
 .campos_extras{
     display: block;

@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //validação do campo 'Categoria'
     //$str_campo_categoria = test_input($_POST["categoria"]);
-    $str_campo_categoria  = "";
 
     // Validação do campo 'Tamanho'
     $tamanho = array();
@@ -80,8 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $valorProduto = test_input($_POST["valorproduto"]);
     
     // Validação do campo 'Custo do Produto'
-    //$custoProduto = test_input($_POST["custoproduto"]);
-    $custoProduto = 0;
+    $custoProduto = test_input($_POST["custoproduto"]);
     
     /******************************************************/
     while($intContadorCor < count($cor)){

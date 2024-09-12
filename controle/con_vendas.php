@@ -1,8 +1,6 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 
-session_start();
-
 $so = php_uname('s');
 $so = strtolower($so);
 
@@ -34,7 +32,6 @@ include("{$dirinclude}");
 
 /*pega valor do código*/
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
 
     if(isset($_POST['funcaocarrinho'])){
         

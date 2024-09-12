@@ -136,12 +136,16 @@
 				<label for="valorproduto">Valor de venda:  &nbsp; &nbsp; &nbsp;</label>
 				<input type="number" id="valorproduto" name="valorproduto"  value="<?php echo("{$dblValorVenda}"); ?>" required><br>
 			</div>
-			<div class="linha_custoproduto">
-				<!--
-				<label for="custoproduto">Custo do Produto:</label>
-				<input type="number" id="custoproduto" name="custoproduto" value="<?php echo("{$dblCusto}"); ?>" required><br>
-				-->
-			</div>
+				<?php
+					if($_SESSION['vendas']['nivelacesso'] != 1){
+				?>
+				<div class="linha_custoproduto">
+					<label for="custoproduto">Custo do Produto:</label>
+					<input type="number" id="custoproduto" name="custoproduto" value="<?php echo("{$dbl_custo_produto}"); ?>" required><br>
+				</div>
+				<?php
+					}
+				?>
 			<div class="linha_botao_submit">
 				<input id="botaoenvio" type="submit" value="Cadastrar">
 			</div>

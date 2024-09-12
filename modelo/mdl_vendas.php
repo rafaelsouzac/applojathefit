@@ -101,7 +101,7 @@ function alterarQuantidade($codigodebarra, $quantidade){
 
 function apagaSessionPedido($intIndiceArray = 0){
 
-    if($intIndiceArray !== 0){
+    if($intIndiceArray == 0){
         unset($_SESSION['vendas']['produto']);
         unset($_SESSION['vendas']['quantidade']);
         unset($_SESSION['vendas']['valor']);
@@ -109,7 +109,6 @@ function apagaSessionPedido($intIndiceArray = 0){
         unset($_SESSION['vendas']['nomeimagem']);
         unset($_SESSION['vendas']['descricao']);
         unset($_SESSION['vendas']['idpedido']); 
-        print_r($_SESSION['vendas']);     
     }else{
         unset($_SESSION['vendas']['produto'][$intIndiceArray]);
         unset($_SESSION['vendas']['quantidade'][$intIndiceArray]);
@@ -117,7 +116,7 @@ function apagaSessionPedido($intIndiceArray = 0){
         unset($_SESSION['vendas']['codigobarra'][$intIndiceArray]);
         unset($_SESSION['vendas']['nomeimagem'][$intIndiceArray]);
         unset($_SESSION['vendas']['descricao'][$intIndiceArray]);
-        unset($_SESSION['vendas']['idpedido']);
+        //unset($_SESSION['vendas']['idpedido']);
     }
 
     return;
@@ -127,13 +126,7 @@ function apagaProduto($codigodebarra){
 
     $intIndiceArray = array_search($codigodebarra, $_SESSION['vendas']['codigobarra']);
     
-    apagaSessionPedido($intIndiceArray);    
-
-    foreach ($_SESSION['vendas'] as &$subarray) {
-        if (is_array($subarray)) {
-            $subarray = array_values($subarray);
-        }
-    }
+    apagaSessionPedido($intIndiceArray);  
 
     if(count($_SESSION['vendas']['codigobarra']) == 0){
         $_SESSION['vendas']['aberta'] = 'n';
@@ -171,7 +164,8 @@ function adicionavendas($intCodigoBarra)
             FROM produtos p
             INNER JOIN valorprodutos vp ON p.idproduto = vp.idproduto inner join
             produtoimagem pi on pi.idproduto = p.idproduto
-            WHERE p.codigobarras = '$intCodigoBarra' and vp.tipopagamento = 'Di' LIMIT 0,1";
+            WHERE p.codigobarras = '$intCodigoBarra' and vp.tipopagamento = 'Di'
+            order by vp.idvalorproduto desc LIMIT 1";
 
     $execSql = acesso();
     $retBanco = $execSql->query($strSql);

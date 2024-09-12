@@ -135,12 +135,24 @@
 			<td class="direita">
 				<div class="textospan">Cód. de barra: <?php echo("{$Linha['codigobarras']}"); ?></div>
 				<div class="textospan"><?php echo("{$Linha['titulo']} {$Linha['tamanho']} $str_cor"); ?></div>
-				<div class="textospan">Valor Ven. R$ <?php echo("{$Linha['valorproduto']}"); ?>
-				</div>
-				<div class="textospan">Custo R$ <?php echo("{$Linha['custoproduto']}"); ?></div>
-				<div class="textospan"><a href="controle/con_lista_produto.php?cb=<?php echo("{$Linha['codigobarras']}"); ?>">Apagar Produto</a></div>
+				<div class="textospan">Valor Ven. R$ <?php echo("{$Linha['valorproduto']}"); ?></div>
+				<?php if($_SESSION['vendas']['nivelacesso'] != 1){ ?>
+					<div class="textospan">Custo R$ <?php echo("{$Linha['custoproduto']}"); ?></div>
+				<?php } ?>
 			</td>
 		</tr>
+		<?php
+			if($_SESSION['vendas']['nivelacesso'] != 1){
+		?>
+		<tr>
+			<td>				
+				<div class="textospan"><a href="controle/con_lista_produto.php?cb=<?php echo("{$Linha['codigobarras']}"); ?>">Apagar </br>Produto</a></div>
+			</td>
+			<td>
+				<div class="textospan"><a href="controle/con_lista_produto.php?s=a&c=<?php echo("{$Linha['codigobarras']}"); ?>">Atulizar </br>Produto</a></div>
+			</td>
+		</tr>
+		<?php }?>
 	</table>
 <?php
 }

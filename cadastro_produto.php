@@ -26,7 +26,30 @@ else{
         $dblCusto = "";
     }
 }
-
+if(isset($_GET['ip'])){
+    $str_pagina = "centro-cadastro_produto_atualiza.php";
+    $arr_recepcao = unserialize(urldecode($_GET['ip']));
+    $str_titulo = $arr_recepcao['titulo'];
+    $str_descricao = $arr_recepcao['descricao'];
+    $int_codigobarras = $arr_recepcao['codigobarras'];
+    $arr_tamanhos = array('un' => '', 'p' => '','m' => '', 'g' => '', 'gg' => '', '34' => '','36' => '', '38' => '', '40' => '', '42' => '', '44' => '', '46' => '', '48' => '' );
+    $arr_tamanhos[$arr_recepcao['tamanho']] = 'checked';
+    $arr_cores = array();
+    $int_inicio = 20;
+    $int_fim = 47;
+    while($int_inicio < $int_fim){
+        $arr_cores["{$int_inicio}"] = '';
+        $int_inicio++;
+    }
+    $arr_cores[$arr_recepcao['cor']] = 'checked';
+    $int_num_cor = $arr_recepcao['cor'];
+    $dbl_custo_produto = $arr_recepcao['custoproduto'];
+    $dbl_valor_produto = $arr_recepcao['valorproduto']; 
+    $int_quantidade = $arr_recepcao['quantidade'];
+}
+else{
+    $str_pagina = "centro-cadastro_produto.php";
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
@@ -44,7 +67,7 @@ else{
 
         <!-- SCROLL DOS PRODUTOS DAS VENDAS -->
         
-            <?php require_once './visual/centro-cadastro_produto.php'; ?>
+            <?php require_once './visual/'. $str_pagina.''; ?>
         
         <!-- PARTE FIXA FECHAMENTO PEDIDO -->
     </body>

@@ -48,3 +48,12 @@ if(isset($_GET['cb'])){
     $strUrl = "../lista_produto.php";
     header("Location: $strUrl");
 }
+
+if(isset($_GET['s'])){
+    $int_codigo_barra_produto = $_GET['c'];
+    $ret_produto = listaProdutos($int_codigo_barra_produto);
+    $arr_produto = $ret_produto->fetch_assoc();
+    $arr_transmicao = urlencode(serialize($arr_produto));
+    $strUrl = "../cadastro_produto.php?ip=$arr_transmicao";
+    header("Location: $strUrl");
+}

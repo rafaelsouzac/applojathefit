@@ -15,7 +15,7 @@
 </div>
 <div class="linha">
     <form id="formulario" action="controle/con_contagem-estoque.php" method="post">
-        <input type="text" name="codigobarra" placeholder="Código do produto">
+        <input type="text" name="codigobarra" placeholder="Código do produto" autofocus>
         <input type="hidden" name="funcaocarrinho" value="1">
         <button id="botao-add" type="submit">+ Contagem</button>
     </form>

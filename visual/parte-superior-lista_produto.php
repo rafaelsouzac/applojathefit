@@ -15,7 +15,7 @@
 </div>
 <div class="linha">
     <form id="formulario" action="controle/con_lista_produto.php" method="post">
-        <input type="text" id="campo-texto" name="codigobarra" placeholder="Código do produto">
+        <input type="text" id="campo-texto" name="codigobarra" placeholder="Código do produto" autofocus>
         <input type="hidden" name="funcaocarrinho" value="1">
         <button id="botao-add" type="submit">Produtos</button>
     </form>
