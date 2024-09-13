@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 header("Content-type: text/html; charset=utf-8");
 
 $so = php_uname('s');

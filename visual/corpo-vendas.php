@@ -2,15 +2,21 @@
         <?php
             if(isset($_SESSION['vendas'])){
 
+                $_SESSION['vendas']['codigobarra'] = array_values($_SESSION['vendas']['codigobarra']);
+                $_SESSION['vendas']['valor'] = array_values($_SESSION['vendas']['valor']);
+                $_SESSION['vendas']['quantidade'] = array_values($_SESSION['vendas']['quantidade']);
+                $_SESSION['vendas']['produto'] = array_values($_SESSION['vendas']['produto']);
+                $_SESSION['vendas']['nomeimagem'] = array_values($_SESSION['vendas']['nomeimagem']);
+
                 $intTamanhoArray = count($_SESSION['vendas']['codigobarra']);
                 $intContador = 0;
                 $intItensTotal = 0;
                 $dblValorTotalCompra = 0.00;
                 $dblValorTotalCompraCredito = 0.00;
                 $intAcrescimoCredito = 5; 
-
-                while($intContador < $intTamanhoArray){
                 
+                while($intContador < $intTamanhoArray){ 
+                    
                     $dblValorCartaoCredito = $_SESSION['vendas']['valor'][$intContador] + $intAcrescimoCredito;
 
                     $intItensTotal += $_SESSION['vendas']['quantidade'][$intContador];

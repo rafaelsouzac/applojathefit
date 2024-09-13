@@ -1,8 +1,4 @@
 <?php
-header("Content-type: text/html; charset=utf-8");
-
-session_start();
-
 include_once 'mdl_banco.php';
 
 /********  FUNCTIONS ******************************************/
@@ -99,16 +95,23 @@ function alterarQuantidade($codigodebarra, $quantidade){
     return;
 }
 
-function apagaSessionPedido($intIndiceArray = 0){
+function apagaSessionPedido($intIndiceArray = NULL){
 
-    if($intIndiceArray == 0){
+    if($intIndiceArray === NULL ){
+
         unset($_SESSION['vendas']['produto']);
+        $_SESSION['vendas']['produto'] = array();
         unset($_SESSION['vendas']['quantidade']);
+        $_SESSION['vendas']['quantidade']= array();
         unset($_SESSION['vendas']['valor']);
+        $_SESSION['vendas']['valor']= array();
         unset($_SESSION['vendas']['codigobarra']);
+        $_SESSION['vendas']['codigobarra']= array();
         unset($_SESSION['vendas']['nomeimagem']);
+        $_SESSION['vendas']['nomeimagem']= array();
         unset($_SESSION['vendas']['descricao']);
-        unset($_SESSION['vendas']['idpedido']); 
+        $_SESSION['vendas']['descricao']= array();    
+        unset($_SESSION['vendas']['idpedido']);
     }else{
         unset($_SESSION['vendas']['produto'][$intIndiceArray]);
         unset($_SESSION['vendas']['quantidade'][$intIndiceArray]);
@@ -116,16 +119,15 @@ function apagaSessionPedido($intIndiceArray = 0){
         unset($_SESSION['vendas']['codigobarra'][$intIndiceArray]);
         unset($_SESSION['vendas']['nomeimagem'][$intIndiceArray]);
         unset($_SESSION['vendas']['descricao'][$intIndiceArray]);
-        //unset($_SESSION['vendas']['idpedido']);
-    }
 
+    }
     return;
 }
 
 function apagaProduto($codigodebarra){
 
     $intIndiceArray = array_search($codigodebarra, $_SESSION['vendas']['codigobarra']);
-    
+
     apagaSessionPedido($intIndiceArray);  
 
     if(count($_SESSION['vendas']['codigobarra']) == 0){

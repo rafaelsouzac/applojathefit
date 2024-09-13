@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 header("Content-type: text/html; charset=utf-8");
 
 // Ativa a exibição de erros
@@ -7,52 +9,43 @@ ini_set('display_errors', 1);
 // Define o nível de relatório de erros
 error_reporting(E_ALL);
 
-if(session_status() !== PHP_SESSION_ACTIVE)
-{
+$_SESSION['infolocais']['endereco'] = $_SERVER['SERVER_NAME'];
+
+$diretorio = $_SERVER['PHP_SELF'];
+$ncarcter = strrpos($diretorio, "/");
+$diretorio = substr($diretorio, 0, $ncarcter+1);
+$_SESSION['infolocais']['dir'] = $diretorio;
+if ($_SESSION['vendas']['aberta'] == 's') {
+    $strCorpo = './visual/corpo-vendas.php';
+}
+else{
+    $strCorpo = './visual/corpo-sem-vendas.php';
+}
+if(isset($_GET['erropg'])){
     
-    session_start();
-    $_SESSION['infolocais']['endereco'] = $_SERVER['SERVER_NAME'];
+    $intErro = $_GET['erropg'];
+    echo("<script type='text/javascript'>\n");
+    echo("function Alerta(){\n");
 
-    $diretorio = $_SERVER['PHP_SELF'];
-    $ncarcter = strrpos($diretorio, "/");
-    $diretorio = substr($diretorio, 0, $ncarcter+1);
-    $_SESSION['infolocais']['dir'] = $diretorio;
-    if ($_SESSION['vendas']['aberta'] == 's') {
-        $strCorpo = './visual/corpo-vendas.php';
+    switch ($intErro) {
+        case 1:
+            echo("  alert('Digite o código do produto');\n");    
+            break;                
+        case 2:
+            echo("  alert('Código do produto inválido.');\n");
+            break;                
+        case 3:
+            echo("  alert(\"Whats Cadastrado.\");\n");
+            break;                    
+        default:
+            // code...
+            break;
     }
-    else{
-        $strCorpo = './visual/corpo-sem-vendas.php';
-    }
-    if(isset($_GET['erropg'])){
-        
-        $intErro = $_GET['erropg'];
-        echo("<script type='text/javascript'>\n");
-        echo("function Alerta(){\n");
-
-        switch ($intErro) {
-            case 1:
-                echo("  alert('Digite o código do produto');\n");    
-                break;                
-            case 2:
-                echo("  alert('Código do produto inválido.');\n");
-                break;                
-            case 3:
-                echo("  alert(\"Whats Cadastrado.\");\n");
-                break;                    
-            default:
-                // code...
-                break;
-        }
-        echo("}\n");
-        echo("window.onload = Alerta();\n");
-        echo("</script>\n");
-    }
-
+    echo("}\n");
+    echo("window.onload = Alerta();\n");
+    echo("</script>\n");
 }
-else
-{
-    header("Location: erros.php?indice=4");
-}
+
 if(isset($_GET['s'])){
     $strCorpo = './visual/finaliza-pedido-whats.php';
 }

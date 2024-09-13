@@ -29,11 +29,11 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><input tabindex="0" class="acesso" name="usuario" type="text" placeholder="Nome de usu&aacute;rio" value=""></td>
+                                <td><input tabindex="0" class="acesso" name="usuario" type="text" placeholder="Nome de usu&aacute;rio" value="rafaelsouzac@gmail.com"></td>
                                 <td rowspan="2"><button tabindex="2" name="acesso" id="btacesso"> Acessar Sistema</button></td>
                             </tr>
                             <tr>
-                                <td><input tabindex="1" class="acesso" name="senha" type="password" placeholder="Senha do usu&aacute;rio" value=""></td>
+                                <td><input tabindex="1" class="acesso" name="senha" type="password" placeholder="Senha do usu&aacute;rio" value="123456"></td>
                             </tr>
                         </tbody>
                     </table>
